@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Wei-chen Huang - Assignment 2</title>
+<title>Wei-chen Huang – proposal</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -156,28 +156,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Assignment 2</h1>
-</div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-</header>
-
-<p>While working with the data set, some troubles I encountered was that the variables in the data set were not very well defined for someone first looking at the data set without much understanding of the research. A separate readme file explaining what the values meant for each data set would be very helpful.</p>
-<p>When dealing with missing values, it is important to know the method of data entry for the specific data set. If the data is entered by hand, an NA means that the value is equal to the value in the previous row, and you can use tidyr::fill() to fill in these cells. If the NA represents a fixed value, you can use dplyr::coalesce() to replace the NA with the value.</p>
-<p>To explore the relationship between Tondu and other variables, I could run a linear regression between Tondu and each other variable to determine if there is a statistical correlation.</p>
-<p>I would first use freq() to determine the frequencies of the different Tondu variables (sentiments towards Taiwanese independence). Then we can create a ggplot bar with the frequencies of the different sentiments.</p>
-<p>create a ggplot bar graph with Tondu as the y axis, and the other variables as the x axis</p>
 
 
 
