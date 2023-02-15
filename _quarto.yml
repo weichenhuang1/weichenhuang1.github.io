@@ -1,0 +1,37 @@
+project:
+  type: website
+
+website:
+  title: "Wei-chen Huang"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - text: Assignments
+        menu: 
+          - href: assignment1.qmd
+            text: Assignment 1
+          - href: assignment2.qmd
+            text: Assignment 2
+          - href: assignment3.qmd
+            text: Assignment 3
+      - text: Labs
+        menu:
+          - href: Lab01.qmd
+            text: Lab 1
+          - href: Lab02.qmd
+            text: Lab 2
+          - href: Lab03.qmd
+            text: Lab 3
+  
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+editor: visual
+

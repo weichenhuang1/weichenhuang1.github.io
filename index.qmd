@@ -1,0 +1,5 @@
+---
+title: "Wei-chen Huang"
+---
+
+I am a first-year Master's student studying Applied Cognition and Neuroscience with a concentration in Intelligent Systems and Computational Modeling. My academic interests are machine learning, neuroscience, and cognitive science.
