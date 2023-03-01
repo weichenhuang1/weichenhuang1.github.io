@@ -1,0 +1,113 @@
+---
+title: Assignment 2
+Author: Wei-chen Huang
+---
+
+While working with the data set, some troubles I encountered was that the variables in the data set were not very well defined for someone first looking at the data set without much understanding of the research. A separate readme file explaining what the values meant for each data set would be very helpful.
+
+When dealing with missing values, it is important to recognize the frequency and context of the response. If the frequency is very low (few percent), then we still have enough of the sample to have a sizeable sample. However, if the frequency is higher (10% or greater), then we should look into the reasons for the response and why the question or survey could lead to the lack of a response. In other words, the lack of a response can also be interpreted as a response.
+
+To explore the relationship between Tondu and other variables, I could plot the Tondu sentiment distributions in each of the groups, and see if the distribution levels of a sentiment category vary significantly between each of the variables. In addition, I can run a T-test and determine if Tondu and each variable is dependent.
+
+(how do I make them into groups based on the variable and then make the Tondu distribution and then plot them all on one graph, the Tondu distribution of each sentiment with a bar for each variable)
+
+```{r}
+library(tidyverse)
+library(haven)
+TEDS_2016 <-
+  read_stata("https://github.com/datageneration/home/blob/master/DataProgramming/data/TEDS_2016.dta?raw=true")
+TEDS_2016$Tondu <-
+  factor(TEDS_2016$Tondu, labels=c("Unification now", "Status quo, unif. in future", "Status quo, decide later","Status quo forever", "Status quo, indep. in future", "Independence now", "No response"))
+library(tidyverse)
+library(ggplot2)
+library(descr)
+#Split into groups based on gender
+female_groups <-TEDS_2016 %>%
+  group_by(female)
+  group_split(female_groups)
+#Plot the sentiments for male and female side by side  
+  ggplot(female_groups, aes(Tondu)) + 
+  geom_bar(aes(fill = interaction(female, Tondu)), position="dodge") +
+  ylab("Frequency") + 
+  xlab("Sentiment towards Taiwanese Independence")
+#separate into two dataframes
+split_female <- TEDS_2016 %>%
+  group_split(female)
+#run a t-test
+femfreq1t <- freq(split_female[[1]]$Tondu)
+femfreq1df <- as.data.frame(femfreq1t)
+femfreq1df
+
+femfreq2t <- freq(split_female[[2]]$Tondu)
+femfreq2df <- as.data.frame(femfreq2t)
+femfreq2df
+
+DPP_groups <-TEDS_2016 %>%
+  group_by(DPP)
+  group_split(DPP_groups)
+  ggplot(DPP_groups, aes(Tondu)) + 
+  geom_bar(aes(fill = interaction(DPP, Tondu)), position="dodge") +
+  ylab("Frequency") + 
+  xlab("Sentiment towards Taiwanese Independence")
+  
+age_groups <-TEDS_2016 %>%
+  group_by(agegroup=cut(age, breaks = seq(20,95, by = 25)), right = F)
+  group_split(age_groups)
+  ggplot(age_groups, aes(Tondu)) + 
+  geom_bar(aes(fill = interaction(agegroup, Tondu)), position="dodge") +
+  ylab("Frequency") + 
+  xlab("Sentiment towards Taiwanese Independence")
+
+inc_groups <-TEDS_2016 %>%
+  group_by(incomegroup=cut(income, breaks = seq(0,10, by = 5.0)), right = F)
+  group_split(inc_groups)
+  ggplot(inc_groups, aes(Tondu)) + 
+  geom_bar(aes(fill = interaction(incomegroup, Tondu)), position="dodge") +
+  ylab("Frequency") + 
+  xlab("Sentiment towards Taiwanese Independence")
+  
+edu_groups <-TEDS_2016 %>%
+  group_by(edu)
+  group_split(edu_groups)
+  ggplot(edu_groups, aes(Tondu)) + 
+  geom_bar(aes(fill = interaction(edu, Tondu)), position="dodge") +
+  ylab("Frequency") + 
+  xlab("Sentiment towards Taiwanese Independence")
+  
+tw_groups <-TEDS_2016 %>%
+  group_by(Taiwanese)
+  group_split(tw_groups)
+  ggplot(tw_groups, aes(Tondu)) + 
+  geom_bar(aes(fill = interaction(Taiwanese, Tondu)), position="dodge") +
+  ylab("Frequency") + 
+  xlab("Sentiment towards Taiwanese Independence")
+
+ew_groups <-TEDS_2016 %>%
+  group_by(Econ_worse)
+  group_split(ew_groups)
+  ggplot(ew_groups, aes(Tondu)) + 
+  geom_bar(aes(fill = interaction(Econ_worse, Tondu)), position="dodge") +
+  ylab("Frequency") + 
+  xlab("Sentiment towards Taiwanese Independence")
+```
+
+For the votetsai variable, it would be similar. I would determine the frequency of individuals who voted for President Tsai and individuals who did not vote for President Tsai. Then, I would group the data multiple times based on each variable, and then plot them on a bar graph and
+
+```{r}
+
+```
+
+create a ggplot bar graph with Tondu as the y axis, and the other variables as the x axis
+
+Frequency table and bar chart of Tondu variable:
+
+```{r}
+library(descr)
+freq(TEDS_2016$Tondu)
+library(ggplot2)
+ggplot(TEDS_2016, aes(Tondu)) + 
+  geom_bar(aes(y = (..count..)/sum(..count..))) + 
+  scale_y_continuous(labels=scales::percent) +
+  ylab("Frequency") + 
+  xlab("Sentiment towards Taiwanese Independence")
+```

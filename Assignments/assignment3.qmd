@@ -1,0 +1,33 @@
+---
+title: Assignment 3
+Author: Wei-chen Huang
+---
+
+```{r echo=FALSE}
+library(haven)
+library(tidyverse)
+TEDS_2016 <- read_stata("https://github.com/datageneration/home/blob/master/DataProgramming/data/TEDS_2016.dta?raw=true")
+TEDS_2016$Tondu <- as.numeric(TEDS_2016$Tondu,labels=c("Unification now”,“Status quo,unif.in future”,“Status quo,decide later","Status quo forever","Status quo,indep.in future","Independence now”,“No response"))
+regplot = function(x,y){
+  fit = lm(y~x)
+  plot(x,y)
+  abline(fit, col = "blue")
+}
+TEDS_2016 |> 
+  select(Tondu, female, DPP, age, income, edu, Taiwanese, Econ_worse)
+tondu_age_fit <- lm(Tondu ~ age, data = TEDS_2016)
+tondu_edu_fit <- lm(Tondu ~ edu, data = TEDS_2016)
+tondu_income_fit <- lm(Tondu ~ income, data = TEDS_2016)
+summary(tondu_age_fit)
+attach(TEDS_2016)
+regplot(Tondu,age)
+summary(tondu_edu_fit)
+regplot(Tondu,edu)
+summary(tondu_income_fit)
+regplot(Tondu,income)
+  
+```
+
+The problem is that we are treating the dependent variable as a quantitative variable when it is actually a qualitative variable stored as a number for ease of data entry.
+
+To improve the prediction of the dependent variable, we can treat it as a qualitative variable. To perform linear regression, we can create dummy variables to represent each possibility, and perform linear regressions for each of the possibilities.

@@ -1,0 +1,13 @@
+---
+title: "Assignment 1"
+---
+
+Both Breiman and Shmueli make great points about properly using data and data analytical tools to properly conduct analyses, form hypotheses, and test hypotheses. 
+
+Breiman focuses more on making an argument against the practice of blindly pursuing highly significant data models without analyzing whether or not the model fits the data and if the model was able to explain the causality of the data. Breiman's article comes almost a decade earlier, during a period of overemphasis on data models and a neglect of other forms of data analysis. He warns the statistical community that exclusively depending on data models to reach conclusions could lead to improper studies and conclusions and stagnate the world of statistics.
+
+Shmueli writes from a period of time when the overemphasis on data models is not as prevalent, and instead moves the conversation forward, writing about the use of both data modeling and algorithmic modeling hand in hand to better understand data. Similar to Breiman, Shmueli makes distinctions between the two types of modeling and the merits and shortcomings of each, but instead of dividing the methods by the tools like Breiman, she divides them based on the goal achieved (explanation or prediction). In addition, Shmueli supports the use of all statistical and analytical tools in explaining and predicting data.
+
+Both authors agree on the fact that not one method is sufficient in understanding data, forming a hypothesis, and testing the hypothesis. Both champion the idea of using many tools, especially algorithms and machine learning to better help understand correlations and causal relationships.
+
+\
