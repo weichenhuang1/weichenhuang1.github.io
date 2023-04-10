@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Wei-chen Huang">
 
-<title>Wei-chen Huang - Regression Model 1</title>
+<title>Wei-chen Huang - NBA Predictions Blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,23 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../otherprojects/imageclass.html" rel="next">
-<link href="../nba_predictions/model1.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./nba_predictions/model1.html" rel="next">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -60,9 +60,39 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
 
-<link rel="stylesheet" href="../styles.css">
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar docked">
@@ -71,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Regression Model 1</h1>
+      <h1 class="quarto-secondary-nav-title">NBA Predictions Blog</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -84,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Wei-chen Huang</a> 
+      <a href="./">Wei-chen Huang</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/weichenhuang1" title="Github" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="mailto:wei-chen.huang@utdallas.edu" title="E-mail" class="sidebar-tool px-1"><i class="bi bi-envelope"></i></a>
@@ -108,17 +138,17 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../blog/posts.html" class="sidebar-item-text sidebar-link">NBA Predictions Blog</a>
+  <a href="./posts.html" class="sidebar-item-text sidebar-link active">NBA Predictions Blog</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nba_predictions/model1.html" class="sidebar-item-text sidebar-link">Classification Model 1</a>
+  <a href="./nba_predictions/model1.html" class="sidebar-item-text sidebar-link">Classification Model 1</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nba_predictions/regmodel1.html" class="sidebar-item-text sidebar-link active">Regression Model 1</a>
+  <a href="./nba_predictions/regmodel1.html" class="sidebar-item-text sidebar-link">Regression Model 1</a>
   </div>
 </li>
       </ul>
@@ -133,7 +163,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../otherprojects/imageclass.html" class="sidebar-item-text sidebar-link">Image Classification</a>
+  <a href="./otherprojects/imageclass.html" class="sidebar-item-text sidebar-link">Image Classification</a>
   </div>
 </li>
       </ul>
@@ -156,32 +186,32 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Assignments/assignment1.html" class="sidebar-item-text sidebar-link">Assignment 1</a>
+  <a href="./Assignments/assignment1.html" class="sidebar-item-text sidebar-link">Assignment 1</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Assignments/assignment2.html" class="sidebar-item-text sidebar-link">Assignment 2</a>
+  <a href="./Assignments/assignment2.html" class="sidebar-item-text sidebar-link">Assignment 2</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Assignments/assignment3.html" class="sidebar-item-text sidebar-link">Assignment 3</a>
+  <a href="./Assignments/assignment3.html" class="sidebar-item-text sidebar-link">Assignment 3</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Assignments/assignment4.html" class="sidebar-item-text sidebar-link">Assignment 4</a>
+  <a href="./Assignments/assignment4.html" class="sidebar-item-text sidebar-link">Assignment 4</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Assignments/assignment5.html" class="sidebar-item-text sidebar-link">Assignment 5</a>
+  <a href="./Assignments/assignment5.html" class="sidebar-item-text sidebar-link">Assignment 5</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Assignments/assignment6.html" class="sidebar-item-text sidebar-link">Assignment 6</a>
+  <a href="./Assignments/assignment6.html" class="sidebar-item-text sidebar-link">Assignment 6</a>
   </div>
 </li>
       </ul>
@@ -196,22 +226,22 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Labs/Lab01.html" class="sidebar-item-text sidebar-link">Lab 1</a>
+  <a href="./Labs/Lab01.html" class="sidebar-item-text sidebar-link">Lab 1</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Labs/Lab02.html" class="sidebar-item-text sidebar-link">Lab 2</a>
+  <a href="./Labs/Lab02.html" class="sidebar-item-text sidebar-link">Lab 2</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Labs/Lab03.html" class="sidebar-item-text sidebar-link">Lab 3</a>
+  <a href="./Labs/Lab03.html" class="sidebar-item-text sidebar-link">Lab 3</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Labs/Lab04.html" class="sidebar-item-text sidebar-link">Lab 4</a>
+  <a href="./Labs/Lab04.html" class="sidebar-item-text sidebar-link">Lab 4</a>
   </div>
 </li>
       </ul>
@@ -226,7 +256,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Project/proposal.html" class="sidebar-item-text sidebar-link">Project Proposal</a>
+  <a href="./Project/proposal.html" class="sidebar-item-text sidebar-link">Project Proposal</a>
   </div>
 </li>
       </ul>
@@ -238,35 +268,20 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
-  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
-  <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github">Github</a></li>
-  </ul>
-</nav>
-    </div>
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="NBA Predictions">NBA Predictions <span class="quarto-category-count">(1)</span></div><div class="category" data-category="playoffs">playoffs <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Regression Model 1</h1>
+<h1 class="title d-none d-lg-block">NBA Predictions Blog</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Wei-chen Huang </p>
-          </div>
-  </div>
     
   
     
@@ -275,33 +290,50 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="overview" class="level3">
-<h3 class="anchored" data-anchor-id="overview">Overview</h3>
-<p>This was also generated using the Keras and TensorFlow libraries, and was trained using the same team statistics as the Classification 1 model. However, instead of inputting win/loss as a binary, I used a continuous variable, point differential. Ideally, this variable would give more information than the binary win/loss, as the sign of the value tells which team won, and the value tells how much they won by. By introducing margin of victory into the model, I hoped to see an improvement, as blowouts (games won by a lot) would be weighted heavier than narrow victories.</p>
-</section>
-<section id="results" class="level3">
-<h3 class="anchored" data-anchor-id="results">Results</h3>
-<p>Although I was optimistic that this model, with victories and losses weighted by point differential, would perform better than the classification model, it performed roughly the same, with an accuracy of approximately 0.63, which is still a number that I am extremely happy with given the simplicity of the model and look forward to its potential as I add more complexities.</p>
-<p><img src="images/accuracy-01.png" class="img-fluid"></p>
-<p>One thing to note is that the accuracy generated when training the model was extremely low, as a ‘correct’ response was that the model predicted the winner and exact margin of victory. After writing a script where ’correct was choosing the correct winner, accuracy increased to 0.63.</p>
-<p><img src="images/fake_accuracy.png" class="img-fluid" width="383"></p>
-<p>It is a good sign that the model is able to have a grasp on the relative strength of teams, as it predicted the Denver Nuggets, an elite team, to win by a decent margin against the Orlando Magic, a middle of the pack team and the Milwaukee Bucks, another elite team, to have an even larger victory against the Detroit Pistons, a bottom 5 team in the league.</p>
-<p><img src="images/orl_den.png" class="img-fluid" width="381"></p>
-<p>In addition, it predicted an extremely close match-up between two average teams, the Utah Jazz and Oklahoma City Thunder.</p>
-<p><img src="images/okc_uta.png" class="img-fluid" width="353"></p>
-</section>
-<section id="limitations" class="level3">
-<h3 class="anchored" data-anchor-id="limitations">Limitations</h3>
-<p>Like the Classification 1 model, this model is hindered by the lack of inclusion of many important variables, discussed in Classification 1. Another limitation of my first iteration of models is the lack of data. As an NBA season is only 82 games for each team, this leaves us with a relatively small dataset to train with. A way to mitigate this would be to also include past seasons in the training data, but in order to do so, the players on each given team would have to be accounted for, most likely by an aggregate statistic. This would account for injuries, trades, free-agent signings, and retirements, so players would only contribute to the team they are currently on, but their past performances can help train the model to determine how much a player can help lead his team to victory.</p>
-</section>
-<section id="github" class="level3">
-<h3 class="anchored" data-anchor-id="github">Github</h3>
-<p>As I do not currently have a functioning front end where you can test these models, <a href="https://github.com/weichenhuang1/nba_predictions/tree/main/regression1">here</a> is a link to my source code and models.</p>
 
 
-</section>
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="NBA Predictions,playoffs" data-listing-date-sort="1681016400000" data-listing-file-modified-sort="1681162285122" data-listing-reading-time-sort="2.245">
+<a href="./blog/2023-04-09-Play-In-Predictions1/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./blog/2023-04-09-Play-In-Predictions1/images/pasted image 0.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+NBA Play In, 7th vs 8th, 9th vs.&nbsp;10th
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('NBA Predictions'); return false;">
+NBA Predictions
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('playoffs'); return false;">
+playoffs
+</div>
+</div>
+<div class="card-text listing-description">
+As the NBA regular season comes to a close, we approach the play in games, which determine the 7th and 8th seeds in the playoffs. The first games are played between the 7th…
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Wei-chen Huang
+</div>
+<div class="listing-date">
+Apr 9, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -437,13 +469,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../nba_predictions/model1.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Classification Model 1</span>
-      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../otherprojects/imageclass.html" class="pagination-link">
-        <span class="nav-page-text">Image Classification</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./nba_predictions/model1.html" class="pagination-link">
+        <span class="nav-page-text">Classification Model 1</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
