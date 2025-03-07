@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.475">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Wei-chen Huang">
+
+<title>Wei-chen Huang - Assignment 2</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../Assignments/assignment3.html" rel="next">
+<link href="../Assignments/assignment1.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Assignment 2</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Wei-chen Huang</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/weichenhuang1" title="Github" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="mailto:wei-chen.huang@utdallas.edu" title="E-mail" class="sidebar-tool px-1"><i class="bi bi-envelope"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">NBA Predictions</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nba_predictions/model1.html" class="sidebar-item-text sidebar-link">First Model</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">Other Projects</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../otherprojects/imageclass.html" class="sidebar-item-text sidebar-link">Image Classification</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">EPPS 6323</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Assignments</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Assignments/assignment1.html" class="sidebar-item-text sidebar-link">Assignment 1</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Assignments/assignment2.html" class="sidebar-item-text sidebar-link active">Assignment 2</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Assignments/assignment3.html" class="sidebar-item-text sidebar-link">Assignment 3</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Assignments/assignment4.html" class="sidebar-item-text sidebar-link">Assignment 4</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Assignments/assignment5.html" class="sidebar-item-text sidebar-link">Assignment 5</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Assignments/assignment6.html" class="sidebar-item-text sidebar-link">Assignment 6</a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">Labs</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Labs/Lab01.html" class="sidebar-item-text sidebar-link">Lab 1</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Labs/Lab02.html" class="sidebar-item-text sidebar-link">Lab 2</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Labs/Lab03.html" class="sidebar-item-text sidebar-link">Lab 3</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Labs/Lab04.html" class="sidebar-item-text sidebar-link">Lab 4</a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">Project</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Project/proposal.html" class="sidebar-item-text sidebar-link">Project Proposal</a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Assignment 2</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Wei-chen Huang </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>When dealing with missing values, it is important to recognize the frequency and context of the missing values. If the frequency is very low (few percent), then we still have enough of the data to work with that would produce a result that is representative of the sample. However, if the frequency is higher (10% or greater), then we should look into the reason for the response and why the question or survey could lead to the lack of a response. In other works the lack of response can also be interpreted as a response and we can look into the environmental variables that contribute to this response.</p>
+<p>To explore the relationship between Tondu and other variables, I would plot the Tondu sentiment distributions in each of the groups, and see if the distribution varies significantly between each of the variables. In addition, I can run a t-test and determine if Tondu is dependent on any of these variables.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tidyverse' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggplot2' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'readr' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'lubridate' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.0     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ ggplot2   3.4.1     ✔ tibble    3.1.8
+✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+✔ purrr     1.0.1     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>TEDS_2016 <span class="ot">&lt;-</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read_stata</span>(<span class="st">"https://github.com/datageneration/home/blob/master/DataProgramming/data/TEDS_2016.dta?raw=true"</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>TEDS_2016<span class="sc">$</span>Tondu <span class="ot">&lt;-</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">factor</span>(TEDS_2016<span class="sc">$</span>Tondu, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">"Unification now"</span>, <span class="st">"Status quo, unif. in future"</span>, <span class="st">"Status quo, decide later"</span>,<span class="st">"Status quo forever"</span>, <span class="st">"Status quo, indep. in future"</span>, <span class="st">"Independence now"</span>, <span class="st">"No response"</span>))</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(descr)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">#Split into groups based on gender</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>female_groups <span class="ot">&lt;-</span>TEDS_2016 <span class="sc">%&gt;%</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(female)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_split</span>(female_groups)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;list_of&lt;
+  tbl_df&lt;
+    District       : labelled&lt;double&gt;
+    Sex            : labelled&lt;double&gt;
+    Age            : labelled&lt;double&gt;
+    Edu            : labelled&lt;double&gt;
+    Arear          : labelled&lt;double&gt;
+    Career         : labelled&lt;double&gt;
+    Career8        : labelled&lt;double&gt;
+    Ethnic         : labelled&lt;double&gt;
+    Party          : labelled&lt;double&gt;
+    PartyID        : labelled&lt;double&gt;
+    Tondu          : factor&lt;56c7a&gt;
+    Tondu3         : labelled&lt;double&gt;
+    nI2            : labelled&lt;double&gt;
+    votetsai       : double
+    green          : double
+    votetsai_nm    : double
+    votetsai_all   : double
+    Independence   : double
+    Unification    : double
+    sq             : double
+    Taiwanese      : double
+    edu            : double
+    female         : double
+    whitecollar    : double
+    lowincome      : double
+    income         : double
+    income_nm      : double
+    age            : double
+    KMT            : double
+    DPP            : double
+    npp            : double
+    noparty        : double
+    pfp            : double
+    South          : double
+    north          : double
+    Minnan_father  : double
+    Mainland_father: double
+    Econ_worse     : double
+    Inequality     : double
+    inequality5    : double
+    econworse5     : double
+    Govt_for_public: double
+    pubwelf5       : double
+    Govt_dont_care : double
+    highincome     : double
+    votekmt        : double
+    votekmt_nm     : double
+    Blue           : double
+    Green          : double
+    No_Party       : double
+    voteblue       : double
+    voteblue_nm    : double
+    votedpp_1      : double
+    votekmt_1      : double
+  &gt;
+&gt;[2]&gt;
+[[1]]
+# A tibble: 868 × 54
+   District     Sex     Age     Edu     Arear   Career  Career8 Ethnic  Party   
+   &lt;dbl+lbl&gt;    &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+lb&gt;
+ 1 201 [Yi Lan… 1 [Mal… 5 [Abo… 5 [Abo… 1 [Tai… 1 [Hig… 1 [Civ… 2 [Bot…  3 [Lea…
+ 2 201 [Yi Lan… 1 [Mal… 4 [50-… 2 [Jun… 1 [Tai… 4 [WOR… 4 [Lab… 1 [Tai… 25 [Neu…
+ 3 201 [Yi Lan… 1 [Mal… 5 [Abo… 1 [Bel… 1 [Tai… 4 [WOR… 4 [Lab… 2 [Bot… 25 [Neu…
+ 4 201 [Yi Lan… 1 [Mal… 4 [50-… 1 [Bel… 1 [Tai… 3 [FAR… 5 [FAR… 2 [Bot… 25 [Neu…
+ 5 201 [Yi Lan… 1 [Mal… 5 [Abo… 1 [Bel… 1 [Tai… 3 [FAR… 5 [FAR… 1 [Tai…  6 [Som…
+ 6 201 [Yi Lan… 1 [Mal… 5 [Abo… 4 [Col… 1 [Tai… 2 [Low… 1 [Civ… 2 [Bot… 25 [Neu…
+ 7 201 [Yi Lan… 1 [Mal… 3 [40-… 5 [Abo… 1 [Tai… 4 [WOR… 4 [Lab… 1 [Tai… 23 [Lea…
+ 8 401 [Hsinch… 1 [Mal… 3 [40-… 5 [Abo… 2 [Tao… 1 [Hig… 2 [Man… 1 [Tai…  7 [Lea…
+ 9 401 [Hsinch… 1 [Mal… 1 [20-… 3 [Sen… 2 [Tao… 2 [Low… 3 [CLE… 2 [Bot… 25 [Neu…
+10 401 [Hsinch… 1 [Mal… 5 [Abo… 1 [Bel… 2 [Tao… 3 [FAR… 5 [FAR… 1 [Tai…  1 [Str…
+# … with 858 more rows, and 45 more variables: PartyID &lt;dbl+lbl&gt;, Tondu &lt;fct&gt;,
+#   Tondu3 &lt;dbl+lbl&gt;, nI2 &lt;dbl+lbl&gt;, votetsai &lt;dbl&gt;, green &lt;dbl&gt;,
+#   votetsai_nm &lt;dbl&gt;, votetsai_all &lt;dbl&gt;, Independence &lt;dbl&gt;,
+#   Unification &lt;dbl&gt;, sq &lt;dbl&gt;, Taiwanese &lt;dbl&gt;, edu &lt;dbl&gt;, female &lt;dbl&gt;,
+#   whitecollar &lt;dbl&gt;, lowincome &lt;dbl&gt;, income &lt;dbl&gt;, income_nm &lt;dbl&gt;,
+#   age &lt;dbl&gt;, KMT &lt;dbl&gt;, DPP &lt;dbl&gt;, npp &lt;dbl&gt;, noparty &lt;dbl&gt;, pfp &lt;dbl&gt;,
+#   South &lt;dbl&gt;, north &lt;dbl&gt;, Minnan_father &lt;dbl&gt;, Mainland_father &lt;dbl&gt;, …
+
+[[2]]
+# A tibble: 822 × 54
+   District     Sex     Age     Edu     Arear   Career  Career8 Ethnic  Party   
+   &lt;dbl+lbl&gt;    &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+lb&gt;
+ 1 201 [Yi Lan… 2 [Fem… 4 [50-… 4 [Col… 1 [Tai… 1 [Hig… 1 [Civ… 1 [Tai… 25 [Neu…
+ 2 201 [Yi Lan… 2 [Fem… 2 [30-… 5 [Abo… 1 [Tai… 2 [Low… 3 [CLE… 2 [Bot… 25 [Neu…
+ 3 201 [Yi Lan… 2 [Fem… 5 [Abo… 1 [Bel… 1 [Tai… 3 [FAR… 5 [FAR… 9 [Nor… 25 [Neu…
+ 4 201 [Yi Lan… 2 [Fem… 5 [Abo… 2 [Jun… 1 [Tai… 2 [Low… 7 [Hou… 1 [Tai…  6 [Som…
+ 5 201 [Yi Lan… 2 [Fem… 4 [50-… 5 [Abo… 1 [Tai… 1 [Hig… 2 [Man… 1 [Tai… 24 [Som…
+ 6 201 [Yi Lan… 2 [Fem… 5 [Abo… 1 [Bel… 1 [Tai… 4 [WOR… 4 [Lab… 1 [Tai… 25 [Neu…
+ 7 201 [Yi Lan… 2 [Fem… 1 [20-… 2 [Jun… 1 [Tai… 5 [Oth… 7 [Hou… 1 [Tai…  5 [Str…
+ 8 201 [Yi Lan… 2 [Fem… 5 [Abo… 1 [Bel… 1 [Tai… 5 [Oth… 7 [Hou… 2 [Bot… 25 [Neu…
+ 9 201 [Yi Lan… 2 [Fem… 3 [40-… 5 [Abo… 1 [Tai… 4 [WOR… 7 [Hou… 1 [Tai…  3 [Lea…
+10 201 [Yi Lan… 2 [Fem… 4 [50-… 5 [Abo… 1 [Tai… 1 [Hig… 2 [Man… 2 [Bot…  3 [Lea…
+# … with 812 more rows, and 45 more variables: PartyID &lt;dbl+lbl&gt;, Tondu &lt;fct&gt;,
+#   Tondu3 &lt;dbl+lbl&gt;, nI2 &lt;dbl+lbl&gt;, votetsai &lt;dbl&gt;, green &lt;dbl&gt;,
+#   votetsai_nm &lt;dbl&gt;, votetsai_all &lt;dbl&gt;, Independence &lt;dbl&gt;,
+#   Unification &lt;dbl&gt;, sq &lt;dbl&gt;, Taiwanese &lt;dbl&gt;, edu &lt;dbl&gt;, female &lt;dbl&gt;,
+#   whitecollar &lt;dbl&gt;, lowincome &lt;dbl&gt;, income &lt;dbl&gt;, income_nm &lt;dbl&gt;,
+#   age &lt;dbl&gt;, KMT &lt;dbl&gt;, DPP &lt;dbl&gt;, npp &lt;dbl&gt;, noparty &lt;dbl&gt;, pfp &lt;dbl&gt;,
+#   South &lt;dbl&gt;, north &lt;dbl&gt;, Minnan_father &lt;dbl&gt;, Mainland_father &lt;dbl&gt;, …</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot the sentiments for male and female side by side  </span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(female_groups, <span class="fu">aes</span>(Tondu)) <span class="sc">+</span> </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="fu">interaction</span>(female, Tondu)), <span class="at">position=</span><span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Frequency"</span>) <span class="sc">+</span> </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Sentiment towards Taiwanese Independence"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assignment2_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#separate into two dataframes</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>split_female <span class="ot">&lt;-</span> TEDS_2016 <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_split</span>(female)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">#run a t-test</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>femfreq1t <span class="ot">&lt;-</span> <span class="fu">freq</span>(split_female[[<span class="dv">1</span>]]<span class="sc">$</span>Tondu)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assignment2_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>femfreq1df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(femfreq1t)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>femfreq1df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                             Frequency    Percent
+Unification now                     13   1.497696
+Status quo, unif. in future        118  13.594470
+Status quo, decide later           295  33.986175
+Status quo forever                 151  17.396313
+Status quo, indep. in future       206  23.732719
+Independence now                    54   6.221198
+No response                         31   3.571429
+Total                              868 100.000000</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>femfreq2t <span class="ot">&lt;-</span> <span class="fu">freq</span>(split_female[[<span class="dv">2</span>]]<span class="sc">$</span>Tondu)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assignment2_files/figure-html/unnamed-chunk-1-3.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>femfreq2df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(femfreq2t)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>femfreq2df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                             Frequency    Percent
+Unification now                     14   1.703163
+Status quo, unif. in future         62   7.542579
+Status quo, decide later           251  30.535280
+Status quo forever                 177  21.532847
+Status quo, indep. in future       174  21.167883
+Independence now                    54   6.569343
+No response                         90  10.948905
+Total                              822 100.000000</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>DPP_groups <span class="ot">&lt;-</span>TEDS_2016 <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(DPP)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_split</span>(DPP_groups)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;list_of&lt;
+  tbl_df&lt;
+    District       : labelled&lt;double&gt;
+    Sex            : labelled&lt;double&gt;
+    Age            : labelled&lt;double&gt;
+    Edu            : labelled&lt;double&gt;
+    Arear          : labelled&lt;double&gt;
+    Career         : labelled&lt;double&gt;
+    Career8        : labelled&lt;double&gt;
+    Ethnic         : labelled&lt;double&gt;
+    Party          : labelled&lt;double&gt;
+    PartyID        : labelled&lt;double&gt;
+    Tondu          : factor&lt;56c7a&gt;
+    Tondu3         : labelled&lt;double&gt;
+    nI2            : labelled&lt;double&gt;
+    votetsai       : double
+    green          : double
+    votetsai_nm    : double
+    votetsai_all   : double
+    Independence   : double
+    Unification    : double
+    sq             : double
+    Taiwanese      : double
+    edu            : double
+    female         : double
+    whitecollar    : double
+    lowincome      : double
+    income         : double
+    income_nm      : double
+    age            : double
+    KMT            : double
+    DPP            : double
+    npp            : double
+    noparty        : double
+    pfp            : double
+    South          : double
+    north          : double
+    Minnan_father  : double
+    Mainland_father: double
+    Econ_worse     : double
+    Inequality     : double
+    inequality5    : double
+    econworse5     : double
+    Govt_for_public: double
+    pubwelf5       : double
+    Govt_dont_care : double
+    highincome     : double
+    votekmt        : double
+    votekmt_nm     : double
+    Blue           : double
+    Green          : double
+    No_Party       : double
+    voteblue       : double
+    voteblue_nm    : double
+    votedpp_1      : double
+    votekmt_1      : double
+  &gt;
+&gt;[2]&gt;
+[[1]]
+# A tibble: 1,099 × 54
+   District     Sex     Age     Edu     Arear   Career  Career8 Ethnic  Party   
+   &lt;dbl+lbl&gt;    &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+lb&gt;
+ 1 201 [Yi Lan… 2 [Fem… 4 [50-… 4 [Col… 1 [Tai… 1 [Hig… 1 [Civ… 1 [Tai… 25 [Neu…
+ 2 201 [Yi Lan… 2 [Fem… 2 [30-… 5 [Abo… 1 [Tai… 2 [Low… 3 [CLE… 2 [Bot… 25 [Neu…
+ 3 201 [Yi Lan… 1 [Mal… 5 [Abo… 5 [Abo… 1 [Tai… 1 [Hig… 1 [Civ… 2 [Bot…  3 [Lea…
+ 4 201 [Yi Lan… 1 [Mal… 4 [50-… 2 [Jun… 1 [Tai… 4 [WOR… 4 [Lab… 1 [Tai… 25 [Neu…
+ 5 201 [Yi Lan… 2 [Fem… 5 [Abo… 1 [Bel… 1 [Tai… 3 [FAR… 5 [FAR… 9 [Nor… 25 [Neu…
+ 6 201 [Yi Lan… 1 [Mal… 5 [Abo… 1 [Bel… 1 [Tai… 4 [WOR… 4 [Lab… 2 [Bot… 25 [Neu…
+ 7 201 [Yi Lan… 2 [Fem… 4 [50-… 5 [Abo… 1 [Tai… 1 [Hig… 2 [Man… 1 [Tai… 24 [Som…
+ 8 201 [Yi Lan… 2 [Fem… 5 [Abo… 1 [Bel… 1 [Tai… 4 [WOR… 4 [Lab… 1 [Tai… 25 [Neu…
+ 9 201 [Yi Lan… 1 [Mal… 4 [50-… 1 [Bel… 1 [Tai… 3 [FAR… 5 [FAR… 2 [Bot… 25 [Neu…
+10 201 [Yi Lan… 2 [Fem… 5 [Abo… 1 [Bel… 1 [Tai… 5 [Oth… 7 [Hou… 2 [Bot… 25 [Neu…
+# … with 1,089 more rows, and 45 more variables: PartyID &lt;dbl+lbl&gt;,
+#   Tondu &lt;fct&gt;, Tondu3 &lt;dbl+lbl&gt;, nI2 &lt;dbl+lbl&gt;, votetsai &lt;dbl&gt;, green &lt;dbl&gt;,
+#   votetsai_nm &lt;dbl&gt;, votetsai_all &lt;dbl&gt;, Independence &lt;dbl&gt;,
+#   Unification &lt;dbl&gt;, sq &lt;dbl&gt;, Taiwanese &lt;dbl&gt;, edu &lt;dbl&gt;, female &lt;dbl&gt;,
+#   whitecollar &lt;dbl&gt;, lowincome &lt;dbl&gt;, income &lt;dbl&gt;, income_nm &lt;dbl&gt;,
+#   age &lt;dbl&gt;, KMT &lt;dbl&gt;, DPP &lt;dbl&gt;, npp &lt;dbl&gt;, noparty &lt;dbl&gt;, pfp &lt;dbl&gt;,
+#   South &lt;dbl&gt;, north &lt;dbl&gt;, Minnan_father &lt;dbl&gt;, Mainland_father &lt;dbl&gt;, …
+
+[[2]]
+# A tibble: 591 × 54
+   District      Sex     Age     Edu     Arear   Career  Career8 Ethnic  Party  
+   &lt;dbl+lbl&gt;     &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt;
+ 1 201 [Yi Lan … 2 [Fem… 5 [Abo… 2 [Jun… 1 [Tai… 2 [Low… 7 [Hou… 1 [Tai… 6 [Som…
+ 2 201 [Yi Lan … 1 [Mal… 5 [Abo… 1 [Bel… 1 [Tai… 3 [FAR… 5 [FAR… 1 [Tai… 6 [Som…
+ 3 201 [Yi Lan … 2 [Fem… 1 [20-… 2 [Jun… 1 [Tai… 5 [Oth… 7 [Hou… 1 [Tai… 5 [Str…
+ 4 401 [Hsinchu… 1 [Mal… 3 [40-… 5 [Abo… 2 [Tao… 1 [Hig… 2 [Man… 1 [Tai… 7 [Lea…
+ 5 401 [Hsinchu… 1 [Mal… 4 [50-… 3 [Sen… 2 [Tao… 4 [WOR… 4 [Lab… 1 [Tai… 6 [Som…
+ 6 401 [Hsinchu… 2 [Fem… 4 [50-… 2 [Jun… 2 [Tao… 4 [WOR… 4 [Lab… 1 [Tai… 5 [Str…
+ 7 502 [Miaoli … 2 [Fem… 5 [Abo… 1 [Bel… 2 [Tao… 3 [FAR… 5 [FAR… 1 [Tai… 5 [Str…
+ 8 502 [Miaoli … 1 [Mal… 3 [40-… 3 [Sen… 2 [Tao… 4 [WOR… 4 [Lab… 2 [Bot… 6 [Som…
+ 9 502 [Miaoli … 1 [Mal… 4 [50-… 3 [Sen… 2 [Tao… 3 [FAR… 5 [FAR… 1 [Tai… 7 [Lea…
+10 701 [Changhu… 1 [Mal… 3 [40-… 3 [Sen… 3 [Tai… 4 [WOR… 4 [Lab… 1 [Tai… 7 [Lea…
+# … with 581 more rows, and 45 more variables: PartyID &lt;dbl+lbl&gt;, Tondu &lt;fct&gt;,
+#   Tondu3 &lt;dbl+lbl&gt;, nI2 &lt;dbl+lbl&gt;, votetsai &lt;dbl&gt;, green &lt;dbl&gt;,
+#   votetsai_nm &lt;dbl&gt;, votetsai_all &lt;dbl&gt;, Independence &lt;dbl&gt;,
+#   Unification &lt;dbl&gt;, sq &lt;dbl&gt;, Taiwanese &lt;dbl&gt;, edu &lt;dbl&gt;, female &lt;dbl&gt;,
+#   whitecollar &lt;dbl&gt;, lowincome &lt;dbl&gt;, income &lt;dbl&gt;, income_nm &lt;dbl&gt;,
+#   age &lt;dbl&gt;, KMT &lt;dbl&gt;, DPP &lt;dbl&gt;, npp &lt;dbl&gt;, noparty &lt;dbl&gt;, pfp &lt;dbl&gt;,
+#   South &lt;dbl&gt;, north &lt;dbl&gt;, Minnan_father &lt;dbl&gt;, Mainland_father &lt;dbl&gt;, …</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(DPP_groups, <span class="fu">aes</span>(Tondu)) <span class="sc">+</span> </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="fu">interaction</span>(DPP, Tondu)), <span class="at">position=</span><span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Frequency"</span>) <span class="sc">+</span> </span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Sentiment towards Taiwanese Independence"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assignment2_files/figure-html/unnamed-chunk-1-4.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>age_groups <span class="ot">&lt;-</span>TEDS_2016 <span class="sc">%&gt;%</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(<span class="at">agegroup=</span><span class="fu">cut</span>(age, <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">20</span>,<span class="dv">95</span>, <span class="at">by =</span> <span class="dv">25</span>)), <span class="at">right =</span> F)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_split</span>(age_groups)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;list_of&lt;
+  tbl_df&lt;
+    District       : labelled&lt;double&gt;
+    Sex            : labelled&lt;double&gt;
+    Age            : labelled&lt;double&gt;
+    Edu            : labelled&lt;double&gt;
+    Arear          : labelled&lt;double&gt;
+    Career         : labelled&lt;double&gt;
+    Career8        : labelled&lt;double&gt;
+    Ethnic         : labelled&lt;double&gt;
+    Party          : labelled&lt;double&gt;
+    PartyID        : labelled&lt;double&gt;
+    Tondu          : factor&lt;56c7a&gt;
+    Tondu3         : labelled&lt;double&gt;
+    nI2            : labelled&lt;double&gt;
+    votetsai       : double
+    green          : double
+    votetsai_nm    : double
+    votetsai_all   : double
+    Independence   : double
+    Unification    : double
+    sq             : double
+    Taiwanese      : double
+    edu            : double
+    female         : double
+    whitecollar    : double
+    lowincome      : double
+    income         : double
+    income_nm      : double
+    age            : double
+    KMT            : double
+    DPP            : double
+    npp            : double
+    noparty        : double
+    pfp            : double
+    South          : double
+    north          : double
+    Minnan_father  : double
+    Mainland_father: double
+    Econ_worse     : double
+    Inequality     : double
+    inequality5    : double
+    econworse5     : double
+    Govt_for_public: double
+    pubwelf5       : double
+    Govt_dont_care : double
+    highincome     : double
+    votekmt        : double
+    votekmt_nm     : double
+    Blue           : double
+    Green          : double
+    No_Party       : double
+    voteblue       : double
+    voteblue_nm    : double
+    votedpp_1      : double
+    votekmt_1      : double
+    agegroup       : factor&lt;210db&gt;
+    right          : logical
+  &gt;
+&gt;[4]&gt;
+[[1]]
+# A tibble: 714 × 56
+   District     Sex     Age     Edu     Arear   Career  Career8 Ethnic  Party   
+   &lt;dbl+lbl&gt;    &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+lb&gt;
+ 1 201 [Yi Lan… 2 [Fem… 2 [30-… 5 [Abo… 1 [Tai… 2 [Low… 3 [CLE… 2 [Bot… 25 [Neu…
+ 2 201 [Yi Lan… 2 [Fem… 1 [20-… 2 [Jun… 1 [Tai… 5 [Oth… 7 [Hou… 1 [Tai…  5 [Str…
+ 3 201 [Yi Lan… 2 [Fem… 3 [40-… 5 [Abo… 1 [Tai… 4 [WOR… 7 [Hou… 1 [Tai…  3 [Lea…
+ 4 201 [Yi Lan… 1 [Mal… 3 [40-… 5 [Abo… 1 [Tai… 4 [WOR… 4 [Lab… 1 [Tai… 23 [Lea…
+ 5 401 [Hsinch… 1 [Mal… 3 [40-… 5 [Abo… 2 [Tao… 1 [Hig… 2 [Man… 1 [Tai…  7 [Lea…
+ 6 401 [Hsinch… 2 [Fem… 2 [30-… 4 [Col… 2 [Tao… 1 [Hig… 2 [Man… 1 [Tai…  2 [Som…
+ 7 401 [Hsinch… 2 [Fem… 2 [30-… 3 [Sen… 2 [Tao… 5 [Oth… 8 [Oth… 1 [Tai…  3 [Lea…
+ 8 401 [Hsinch… 1 [Mal… 1 [20-… 3 [Sen… 2 [Tao… 2 [Low… 3 [CLE… 2 [Bot… 25 [Neu…
+ 9 401 [Hsinch… 1 [Mal… 3 [40-… 4 [Col… 2 [Tao… 1 [Hig… 2 [Man… 1 [Tai… 25 [Neu…
+10 401 [Hsinch… 1 [Mal… 1 [20-… 5 [Abo… 2 [Tao… 4 [WOR… 4 [Lab… 9 [Nor… 25 [Neu…
+# … with 704 more rows, and 47 more variables: PartyID &lt;dbl+lbl&gt;, Tondu &lt;fct&gt;,
+#   Tondu3 &lt;dbl+lbl&gt;, nI2 &lt;dbl+lbl&gt;, votetsai &lt;dbl&gt;, green &lt;dbl&gt;,
+#   votetsai_nm &lt;dbl&gt;, votetsai_all &lt;dbl&gt;, Independence &lt;dbl&gt;,
+#   Unification &lt;dbl&gt;, sq &lt;dbl&gt;, Taiwanese &lt;dbl&gt;, edu &lt;dbl&gt;, female &lt;dbl&gt;,
+#   whitecollar &lt;dbl&gt;, lowincome &lt;dbl&gt;, income &lt;dbl&gt;, income_nm &lt;dbl&gt;,
+#   age &lt;dbl&gt;, KMT &lt;dbl&gt;, DPP &lt;dbl&gt;, npp &lt;dbl&gt;, noparty &lt;dbl&gt;, pfp &lt;dbl&gt;,
+#   South &lt;dbl&gt;, north &lt;dbl&gt;, Minnan_father &lt;dbl&gt;, Mainland_father &lt;dbl&gt;, …
+
+[[2]]
+# A tibble: 793 × 56
+   District     Sex     Age     Edu     Arear   Career  Career8 Ethnic  Party   
+   &lt;dbl+lbl&gt;    &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+lb&gt;
+ 1 201 [Yi Lan… 2 [Fem… 4 [50-… 4 [Col… 1 [Tai… 1 [Hig… 1 [Civ… 1 [Tai… 25 [Neu…
+ 2 201 [Yi Lan… 1 [Mal… 5 [Abo… 5 [Abo… 1 [Tai… 1 [Hig… 1 [Civ… 2 [Bot…  3 [Lea…
+ 3 201 [Yi Lan… 1 [Mal… 4 [50-… 2 [Jun… 1 [Tai… 4 [WOR… 4 [Lab… 1 [Tai… 25 [Neu…
+ 4 201 [Yi Lan… 2 [Fem… 5 [Abo… 2 [Jun… 1 [Tai… 2 [Low… 7 [Hou… 1 [Tai…  6 [Som…
+ 5 201 [Yi Lan… 2 [Fem… 4 [50-… 5 [Abo… 1 [Tai… 1 [Hig… 2 [Man… 1 [Tai… 24 [Som…
+ 6 201 [Yi Lan… 2 [Fem… 5 [Abo… 1 [Bel… 1 [Tai… 4 [WOR… 4 [Lab… 1 [Tai… 25 [Neu…
+ 7 201 [Yi Lan… 1 [Mal… 4 [50-… 1 [Bel… 1 [Tai… 3 [FAR… 5 [FAR… 2 [Bot… 25 [Neu…
+ 8 201 [Yi Lan… 1 [Mal… 5 [Abo… 1 [Bel… 1 [Tai… 3 [FAR… 5 [FAR… 1 [Tai…  6 [Som…
+ 9 201 [Yi Lan… 2 [Fem… 4 [50-… 5 [Abo… 1 [Tai… 1 [Hig… 2 [Man… 2 [Bot…  3 [Lea…
+10 201 [Yi Lan… 2 [Fem… 4 [50-… 3 [Sen… 1 [Tai… 2 [Low… 3 [CLE… 2 [Bot… 25 [Neu…
+# … with 783 more rows, and 47 more variables: PartyID &lt;dbl+lbl&gt;, Tondu &lt;fct&gt;,
+#   Tondu3 &lt;dbl+lbl&gt;, nI2 &lt;dbl+lbl&gt;, votetsai &lt;dbl&gt;, green &lt;dbl&gt;,
+#   votetsai_nm &lt;dbl&gt;, votetsai_all &lt;dbl&gt;, Independence &lt;dbl&gt;,
+#   Unification &lt;dbl&gt;, sq &lt;dbl&gt;, Taiwanese &lt;dbl&gt;, edu &lt;dbl&gt;, female &lt;dbl&gt;,
+#   whitecollar &lt;dbl&gt;, lowincome &lt;dbl&gt;, income &lt;dbl&gt;, income_nm &lt;dbl&gt;,
+#   age &lt;dbl&gt;, KMT &lt;dbl&gt;, DPP &lt;dbl&gt;, npp &lt;dbl&gt;, noparty &lt;dbl&gt;, pfp &lt;dbl&gt;,
+#   South &lt;dbl&gt;, north &lt;dbl&gt;, Minnan_father &lt;dbl&gt;, Mainland_father &lt;dbl&gt;, …
+
+[[3]]
+# A tibble: 180 × 56
+   District     Sex     Age     Edu     Arear   Career  Career8 Ethnic  Party   
+   &lt;dbl+lbl&gt;    &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+lb&gt;
+ 1 201 [Yi Lan… 2 [Fem… 5 [Abo… 1 [Bel… 1 [Tai… 3 [FAR… 5 [FAR… 9 [Nor… 25 [Neu…
+ 2 201 [Yi Lan… 1 [Mal… 5 [Abo… 1 [Bel… 1 [Tai… 4 [WOR… 4 [Lab… 2 [Bot… 25 [Neu…
+ 3 201 [Yi Lan… 2 [Fem… 5 [Abo… 1 [Bel… 1 [Tai… 5 [Oth… 7 [Hou… 2 [Bot… 25 [Neu…
+ 4 201 [Yi Lan… 2 [Fem… 5 [Abo… 1 [Bel… 1 [Tai… 5 [Oth… 7 [Hou… 9 [Nor… 25 [Neu…
+ 5 401 [Hsinch… 1 [Mal… 5 [Abo… 1 [Bel… 2 [Tao… 3 [FAR… 5 [FAR… 1 [Tai…  1 [Str…
+ 6 502 [Miaoli… 2 [Fem… 5 [Abo… 1 [Bel… 2 [Tao… 3 [FAR… 5 [FAR… 1 [Tai…  5 [Str…
+ 7 701 [Changh… 1 [Mal… 5 [Abo… 1 [Bel… 3 [Tai… 4 [WOR… 4 [Lab… 1 [Tai… 25 [Neu…
+ 8 701 [Changh… 1 [Mal… 5 [Abo… 1 [Bel… 3 [Tai… 1 [Hig… 2 [Man… 2 [Bot… 25 [Neu…
+ 9 704 [Changh… 2 [Fem… 5 [Abo… 1 [Bel… 3 [Tai… 5 [Oth… 7 [Hou… 1 [Tai…  3 [Lea…
+10 703 [Changh… 2 [Fem… 5 [Abo… 1 [Bel… 3 [Tai… 4 [WOR… 4 [Lab… 1 [Tai… 25 [Neu…
+# … with 170 more rows, and 47 more variables: PartyID &lt;dbl+lbl&gt;, Tondu &lt;fct&gt;,
+#   Tondu3 &lt;dbl+lbl&gt;, nI2 &lt;dbl+lbl&gt;, votetsai &lt;dbl&gt;, green &lt;dbl&gt;,
+#   votetsai_nm &lt;dbl&gt;, votetsai_all &lt;dbl&gt;, Independence &lt;dbl&gt;,
+#   Unification &lt;dbl&gt;, sq &lt;dbl&gt;, Taiwanese &lt;dbl&gt;, edu &lt;dbl&gt;, female &lt;dbl&gt;,
+#   whitecollar &lt;dbl&gt;, lowincome &lt;dbl&gt;, income &lt;dbl&gt;, income_nm &lt;dbl&gt;,
+#   age &lt;dbl&gt;, KMT &lt;dbl&gt;, DPP &lt;dbl&gt;, npp &lt;dbl&gt;, noparty &lt;dbl&gt;, pfp &lt;dbl&gt;,
+#   South &lt;dbl&gt;, north &lt;dbl&gt;, Minnan_father &lt;dbl&gt;, Mainland_father &lt;dbl&gt;, …
+
+[[4]]
+# A tibble: 3 × 56
+  District       Sex     Age     Edu     Arear   Career  Career8 Ethnic  Party  
+  &lt;dbl+lbl&gt;      &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt;
+1 6301 [Taipei … 1 [Mal… 5 [Abo… 3 [Sen… 1 [Tai… 1 [Hig… 1 [Civ… 3 [Chi… 1 [Str…
+2  703 [Changhu… 2 [Fem… 1 [20-… 5 [Abo… 3 [Tai… 2 [Low… 3 [CLE… 1 [Tai… 7 [Lea…
+3 6301 [Taipei … 2 [Fem… 1 [20-… 5 [Abo… 1 [Tai… 1 [Hig… 6 [Stu… 1 [Tai… 1 [Str…
+# … with 47 more variables: PartyID &lt;dbl+lbl&gt;, Tondu &lt;fct&gt;, Tondu3 &lt;dbl+lbl&gt;,
+#   nI2 &lt;dbl+lbl&gt;, votetsai &lt;dbl&gt;, green &lt;dbl&gt;, votetsai_nm &lt;dbl&gt;,
+#   votetsai_all &lt;dbl&gt;, Independence &lt;dbl&gt;, Unification &lt;dbl&gt;, sq &lt;dbl&gt;,
+#   Taiwanese &lt;dbl&gt;, edu &lt;dbl&gt;, female &lt;dbl&gt;, whitecollar &lt;dbl&gt;,
+#   lowincome &lt;dbl&gt;, income &lt;dbl&gt;, income_nm &lt;dbl&gt;, age &lt;dbl&gt;, KMT &lt;dbl&gt;,
+#   DPP &lt;dbl&gt;, npp &lt;dbl&gt;, noparty &lt;dbl&gt;, pfp &lt;dbl&gt;, South &lt;dbl&gt;, north &lt;dbl&gt;,
+#   Minnan_father &lt;dbl&gt;, Mainland_father &lt;dbl&gt;, Econ_worse &lt;dbl&gt;, …</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(age_groups, <span class="fu">aes</span>(Tondu)) <span class="sc">+</span> </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="fu">interaction</span>(agegroup, Tondu)), <span class="at">position=</span><span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Frequency"</span>) <span class="sc">+</span> </span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Sentiment towards Taiwanese Independence"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assignment2_files/figure-html/unnamed-chunk-1-5.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>inc_groups <span class="ot">&lt;-</span>TEDS_2016 <span class="sc">%&gt;%</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(<span class="at">incomegroup=</span><span class="fu">cut</span>(income, <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">10</span>, <span class="at">by =</span> <span class="fl">5.0</span>)), <span class="at">right =</span> F)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_split</span>(inc_groups)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;list_of&lt;
+  tbl_df&lt;
+    District       : labelled&lt;double&gt;
+    Sex            : labelled&lt;double&gt;
+    Age            : labelled&lt;double&gt;
+    Edu            : labelled&lt;double&gt;
+    Arear          : labelled&lt;double&gt;
+    Career         : labelled&lt;double&gt;
+    Career8        : labelled&lt;double&gt;
+    Ethnic         : labelled&lt;double&gt;
+    Party          : labelled&lt;double&gt;
+    PartyID        : labelled&lt;double&gt;
+    Tondu          : factor&lt;56c7a&gt;
+    Tondu3         : labelled&lt;double&gt;
+    nI2            : labelled&lt;double&gt;
+    votetsai       : double
+    green          : double
+    votetsai_nm    : double
+    votetsai_all   : double
+    Independence   : double
+    Unification    : double
+    sq             : double
+    Taiwanese      : double
+    edu            : double
+    female         : double
+    whitecollar    : double
+    lowincome      : double
+    income         : double
+    income_nm      : double
+    age            : double
+    KMT            : double
+    DPP            : double
+    npp            : double
+    noparty        : double
+    pfp            : double
+    South          : double
+    north          : double
+    Minnan_father  : double
+    Mainland_father: double
+    Econ_worse     : double
+    Inequality     : double
+    inequality5    : double
+    econworse5     : double
+    Govt_for_public: double
+    pubwelf5       : double
+    Govt_dont_care : double
+    highincome     : double
+    votekmt        : double
+    votekmt_nm     : double
+    Blue           : double
+    Green          : double
+    No_Party       : double
+    voteblue       : double
+    voteblue_nm    : double
+    votedpp_1      : double
+    votekmt_1      : double
+    incomegroup    : factor&lt;d71c4&gt;
+    right          : logical
+  &gt;
+&gt;[2]&gt;
+[[1]]
+# A tibble: 716 × 56
+   District     Sex     Age     Edu     Arear   Career  Career8 Ethnic  Party   
+   &lt;dbl+lbl&gt;    &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+lb&gt;
+ 1 201 [Yi Lan… 1 [Mal… 4 [50-… 2 [Jun… 1 [Tai… 4 [WOR… 4 [Lab… 1 [Tai… 25 [Neu…
+ 2 201 [Yi Lan… 1 [Mal… 5 [Abo… 1 [Bel… 1 [Tai… 4 [WOR… 4 [Lab… 2 [Bot… 25 [Neu…
+ 3 201 [Yi Lan… 2 [Fem… 5 [Abo… 1 [Bel… 1 [Tai… 4 [WOR… 4 [Lab… 1 [Tai… 25 [Neu…
+ 4 201 [Yi Lan… 1 [Mal… 5 [Abo… 1 [Bel… 1 [Tai… 3 [FAR… 5 [FAR… 1 [Tai…  6 [Som…
+ 5 201 [Yi Lan… 2 [Fem… 4 [50-… 5 [Abo… 1 [Tai… 1 [Hig… 2 [Man… 2 [Bot…  3 [Lea…
+ 6 201 [Yi Lan… 1 [Mal… 3 [40-… 5 [Abo… 1 [Tai… 4 [WOR… 4 [Lab… 1 [Tai… 23 [Lea…
+ 7 401 [Hsinch… 1 [Mal… 1 [20-… 3 [Sen… 2 [Tao… 2 [Low… 3 [CLE… 2 [Bot… 25 [Neu…
+ 8 401 [Hsinch… 1 [Mal… 5 [Abo… 1 [Bel… 2 [Tao… 3 [FAR… 5 [FAR… 1 [Tai…  1 [Str…
+ 9 401 [Hsinch… 1 [Mal… 5 [Abo… 3 [Sen… 2 [Tao… 1 [Hig… 1 [Civ… 2 [Bot… 10 [Som…
+10 401 [Hsinch… 1 [Mal… 4 [50-… 1 [Bel… 2 [Tao… 1 [Hig… 2 [Man… 3 [Chi…  2 [Som…
+# … with 706 more rows, and 47 more variables: PartyID &lt;dbl+lbl&gt;, Tondu &lt;fct&gt;,
+#   Tondu3 &lt;dbl+lbl&gt;, nI2 &lt;dbl+lbl&gt;, votetsai &lt;dbl&gt;, green &lt;dbl&gt;,
+#   votetsai_nm &lt;dbl&gt;, votetsai_all &lt;dbl&gt;, Independence &lt;dbl&gt;,
+#   Unification &lt;dbl&gt;, sq &lt;dbl&gt;, Taiwanese &lt;dbl&gt;, edu &lt;dbl&gt;, female &lt;dbl&gt;,
+#   whitecollar &lt;dbl&gt;, lowincome &lt;dbl&gt;, income &lt;dbl&gt;, income_nm &lt;dbl&gt;,
+#   age &lt;dbl&gt;, KMT &lt;dbl&gt;, DPP &lt;dbl&gt;, npp &lt;dbl&gt;, noparty &lt;dbl&gt;, pfp &lt;dbl&gt;,
+#   South &lt;dbl&gt;, north &lt;dbl&gt;, Minnan_father &lt;dbl&gt;, Mainland_father &lt;dbl&gt;, …
+
+[[2]]
+# A tibble: 974 × 56
+   District     Sex     Age     Edu     Arear   Career  Career8 Ethnic  Party   
+   &lt;dbl+lbl&gt;    &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+lb&gt;
+ 1 201 [Yi Lan… 2 [Fem… 4 [50-… 4 [Col… 1 [Tai… 1 [Hig… 1 [Civ… 1 [Tai… 25 [Neu…
+ 2 201 [Yi Lan… 2 [Fem… 2 [30-… 5 [Abo… 1 [Tai… 2 [Low… 3 [CLE… 2 [Bot… 25 [Neu…
+ 3 201 [Yi Lan… 1 [Mal… 5 [Abo… 5 [Abo… 1 [Tai… 1 [Hig… 1 [Civ… 2 [Bot…  3 [Lea…
+ 4 201 [Yi Lan… 2 [Fem… 5 [Abo… 1 [Bel… 1 [Tai… 3 [FAR… 5 [FAR… 9 [Nor… 25 [Neu…
+ 5 201 [Yi Lan… 2 [Fem… 5 [Abo… 2 [Jun… 1 [Tai… 2 [Low… 7 [Hou… 1 [Tai…  6 [Som…
+ 6 201 [Yi Lan… 2 [Fem… 4 [50-… 5 [Abo… 1 [Tai… 1 [Hig… 2 [Man… 1 [Tai… 24 [Som…
+ 7 201 [Yi Lan… 1 [Mal… 4 [50-… 1 [Bel… 1 [Tai… 3 [FAR… 5 [FAR… 2 [Bot… 25 [Neu…
+ 8 201 [Yi Lan… 2 [Fem… 1 [20-… 2 [Jun… 1 [Tai… 5 [Oth… 7 [Hou… 1 [Tai…  5 [Str…
+ 9 201 [Yi Lan… 2 [Fem… 5 [Abo… 1 [Bel… 1 [Tai… 5 [Oth… 7 [Hou… 2 [Bot… 25 [Neu…
+10 201 [Yi Lan… 2 [Fem… 3 [40-… 5 [Abo… 1 [Tai… 4 [WOR… 7 [Hou… 1 [Tai…  3 [Lea…
+# … with 964 more rows, and 47 more variables: PartyID &lt;dbl+lbl&gt;, Tondu &lt;fct&gt;,
+#   Tondu3 &lt;dbl+lbl&gt;, nI2 &lt;dbl+lbl&gt;, votetsai &lt;dbl&gt;, green &lt;dbl&gt;,
+#   votetsai_nm &lt;dbl&gt;, votetsai_all &lt;dbl&gt;, Independence &lt;dbl&gt;,
+#   Unification &lt;dbl&gt;, sq &lt;dbl&gt;, Taiwanese &lt;dbl&gt;, edu &lt;dbl&gt;, female &lt;dbl&gt;,
+#   whitecollar &lt;dbl&gt;, lowincome &lt;dbl&gt;, income &lt;dbl&gt;, income_nm &lt;dbl&gt;,
+#   age &lt;dbl&gt;, KMT &lt;dbl&gt;, DPP &lt;dbl&gt;, npp &lt;dbl&gt;, noparty &lt;dbl&gt;, pfp &lt;dbl&gt;,
+#   South &lt;dbl&gt;, north &lt;dbl&gt;, Minnan_father &lt;dbl&gt;, Mainland_father &lt;dbl&gt;, …</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(inc_groups, <span class="fu">aes</span>(Tondu)) <span class="sc">+</span> </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="fu">interaction</span>(incomegroup, Tondu)), <span class="at">position=</span><span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Frequency"</span>) <span class="sc">+</span> </span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Sentiment towards Taiwanese Independence"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assignment2_files/figure-html/unnamed-chunk-1-6.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>edu_groups <span class="ot">&lt;-</span>TEDS_2016 <span class="sc">%&gt;%</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(edu)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_split</span>(edu_groups)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;list_of&lt;
+  tbl_df&lt;
+    District       : labelled&lt;double&gt;
+    Sex            : labelled&lt;double&gt;
+    Age            : labelled&lt;double&gt;
+    Edu            : labelled&lt;double&gt;
+    Arear          : labelled&lt;double&gt;
+    Career         : labelled&lt;double&gt;
+    Career8        : labelled&lt;double&gt;
+    Ethnic         : labelled&lt;double&gt;
+    Party          : labelled&lt;double&gt;
+    PartyID        : labelled&lt;double&gt;
+    Tondu          : factor&lt;56c7a&gt;
+    Tondu3         : labelled&lt;double&gt;
+    nI2            : labelled&lt;double&gt;
+    votetsai       : double
+    green          : double
+    votetsai_nm    : double
+    votetsai_all   : double
+    Independence   : double
+    Unification    : double
+    sq             : double
+    Taiwanese      : double
+    edu            : double
+    female         : double
+    whitecollar    : double
+    lowincome      : double
+    income         : double
+    income_nm      : double
+    age            : double
+    KMT            : double
+    DPP            : double
+    npp            : double
+    noparty        : double
+    pfp            : double
+    South          : double
+    north          : double
+    Minnan_father  : double
+    Mainland_father: double
+    Econ_worse     : double
+    Inequality     : double
+    inequality5    : double
+    econworse5     : double
+    Govt_for_public: double
+    pubwelf5       : double
+    Govt_dont_care : double
+    highincome     : double
+    votekmt        : double
+    votekmt_nm     : double
+    Blue           : double
+    Green          : double
+    No_Party       : double
+    voteblue       : double
+    voteblue_nm    : double
+    votedpp_1      : double
+    votekmt_1      : double
+  &gt;
+&gt;[6]&gt;
+[[1]]
+# A tibble: 322 × 54
+   District     Sex     Age     Edu     Arear   Career  Career8 Ethnic  Party   
+   &lt;dbl+lbl&gt;    &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+lb&gt;
+ 1 201 [Yi Lan… 2 [Fem… 5 [Abo… 1 [Bel… 1 [Tai… 3 [FAR… 5 [FAR… 9 [Nor… 25 [Neu…
+ 2 201 [Yi Lan… 1 [Mal… 5 [Abo… 1 [Bel… 1 [Tai… 4 [WOR… 4 [Lab… 2 [Bot… 25 [Neu…
+ 3 201 [Yi Lan… 2 [Fem… 5 [Abo… 1 [Bel… 1 [Tai… 4 [WOR… 4 [Lab… 1 [Tai… 25 [Neu…
+ 4 201 [Yi Lan… 1 [Mal… 4 [50-… 1 [Bel… 1 [Tai… 3 [FAR… 5 [FAR… 2 [Bot… 25 [Neu…
+ 5 201 [Yi Lan… 1 [Mal… 5 [Abo… 1 [Bel… 1 [Tai… 3 [FAR… 5 [FAR… 1 [Tai…  6 [Som…
+ 6 201 [Yi Lan… 2 [Fem… 5 [Abo… 1 [Bel… 1 [Tai… 5 [Oth… 7 [Hou… 2 [Bot… 25 [Neu…
+ 7 201 [Yi Lan… 2 [Fem… 5 [Abo… 1 [Bel… 1 [Tai… 5 [Oth… 7 [Hou… 9 [Nor… 25 [Neu…
+ 8 401 [Hsinch… 1 [Mal… 5 [Abo… 1 [Bel… 2 [Tao… 3 [FAR… 5 [FAR… 1 [Tai…  1 [Str…
+ 9 401 [Hsinch… 1 [Mal… 4 [50-… 1 [Bel… 2 [Tao… 1 [Hig… 2 [Man… 3 [Chi…  2 [Som…
+10 401 [Hsinch… 2 [Fem… 2 [30-… 1 [Bel… 2 [Tao… 4 [WOR… 4 [Lab… 2 [Bot… 25 [Neu…
+# … with 312 more rows, and 45 more variables: PartyID &lt;dbl+lbl&gt;, Tondu &lt;fct&gt;,
+#   Tondu3 &lt;dbl+lbl&gt;, nI2 &lt;dbl+lbl&gt;, votetsai &lt;dbl&gt;, green &lt;dbl&gt;,
+#   votetsai_nm &lt;dbl&gt;, votetsai_all &lt;dbl&gt;, Independence &lt;dbl&gt;,
+#   Unification &lt;dbl&gt;, sq &lt;dbl&gt;, Taiwanese &lt;dbl&gt;, edu &lt;dbl&gt;, female &lt;dbl&gt;,
+#   whitecollar &lt;dbl&gt;, lowincome &lt;dbl&gt;, income &lt;dbl&gt;, income_nm &lt;dbl&gt;,
+#   age &lt;dbl&gt;, KMT &lt;dbl&gt;, DPP &lt;dbl&gt;, npp &lt;dbl&gt;, noparty &lt;dbl&gt;, pfp &lt;dbl&gt;,
+#   South &lt;dbl&gt;, north &lt;dbl&gt;, Minnan_father &lt;dbl&gt;, Mainland_father &lt;dbl&gt;, …
+
+[[2]]
+# A tibble: 161 × 54
+   District     Sex     Age     Edu     Arear   Career  Career8 Ethnic  Party   
+   &lt;dbl+lbl&gt;    &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+lb&gt;
+ 1  201 [Yi La… 1 [Mal… 4 [50-… 2 [Jun… 1 [Tai… 4 [WOR… 4 [Lab… 1 [Tai… 25 [Neu…
+ 2  201 [Yi La… 2 [Fem… 5 [Abo… 2 [Jun… 1 [Tai… 2 [Low… 7 [Hou… 1 [Tai…  6 [Som…
+ 3  201 [Yi La… 2 [Fem… 1 [20-… 2 [Jun… 1 [Tai… 5 [Oth… 7 [Hou… 1 [Tai…  5 [Str…
+ 4  401 [Hsinc… 2 [Fem… 4 [50-… 2 [Jun… 2 [Tao… 4 [WOR… 4 [Lab… 1 [Tai…  5 [Str…
+ 5  502 [Miaol… 2 [Fem… 4 [50-… 2 [Jun… 2 [Tao… 5 [Oth… 7 [Hou… 2 [Bot…  2 [Som…
+ 6  701 [Chang… 2 [Fem… 4 [50-… 2 [Jun… 3 [Tai… 5 [Oth… 7 [Hou… 1 [Tai…  6 [Som…
+ 7  704 [Chang… 2 [Fem… 5 [Abo… 2 [Jun… 3 [Tai… 3 [FAR… 5 [FAR… 1 [Tai… 25 [Neu…
+ 8  901 [Yunli… 2 [Fem… 5 [Abo… 2 [Jun… 4 [Yun… 3 [FAR… 5 [FAR… 1 [Tai…  7 [Lea…
+ 9  901 [Yunli… 1 [Mal… 4 [50-… 2 [Jun… 4 [Yun… 4 [WOR… 4 [Lab… 1 [Tai…  5 [Str…
+10 1002 [Chiay… 1 [Mal… 3 [40-… 2 [Jun… 4 [Yun… 4 [WOR… 4 [Lab… 1 [Tai… 25 [Neu…
+# … with 151 more rows, and 45 more variables: PartyID &lt;dbl+lbl&gt;, Tondu &lt;fct&gt;,
+#   Tondu3 &lt;dbl+lbl&gt;, nI2 &lt;dbl+lbl&gt;, votetsai &lt;dbl&gt;, green &lt;dbl&gt;,
+#   votetsai_nm &lt;dbl&gt;, votetsai_all &lt;dbl&gt;, Independence &lt;dbl&gt;,
+#   Unification &lt;dbl&gt;, sq &lt;dbl&gt;, Taiwanese &lt;dbl&gt;, edu &lt;dbl&gt;, female &lt;dbl&gt;,
+#   whitecollar &lt;dbl&gt;, lowincome &lt;dbl&gt;, income &lt;dbl&gt;, income_nm &lt;dbl&gt;,
+#   age &lt;dbl&gt;, KMT &lt;dbl&gt;, DPP &lt;dbl&gt;, npp &lt;dbl&gt;, noparty &lt;dbl&gt;, pfp &lt;dbl&gt;,
+#   South &lt;dbl&gt;, north &lt;dbl&gt;, Minnan_father &lt;dbl&gt;, Mainland_father &lt;dbl&gt;, …
+
+[[3]]
+# A tibble: 449 × 54
+   District     Sex     Age     Edu     Arear   Career  Career8 Ethnic  Party   
+   &lt;dbl+lbl&gt;    &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+lb&gt;
+ 1 201 [Yi Lan… 2 [Fem… 4 [50-… 3 [Sen… 1 [Tai… 2 [Low… 3 [CLE… 2 [Bot… 25 [Neu…
+ 2 401 [Hsinch… 2 [Fem… 2 [30-… 3 [Sen… 2 [Tao… 5 [Oth… 8 [Oth… 1 [Tai…  3 [Lea…
+ 3 401 [Hsinch… 1 [Mal… 1 [20-… 3 [Sen… 2 [Tao… 2 [Low… 3 [CLE… 2 [Bot… 25 [Neu…
+ 4 401 [Hsinch… 2 [Fem… 5 [Abo… 3 [Sen… 2 [Tao… 2 [Low… 3 [CLE… 2 [Bot…  2 [Som…
+ 5 401 [Hsinch… 1 [Mal… 5 [Abo… 3 [Sen… 2 [Tao… 1 [Hig… 1 [Civ… 2 [Bot… 10 [Som…
+ 6 401 [Hsinch… 1 [Mal… 3 [40-… 3 [Sen… 2 [Tao… 5 [Oth… 7 [Hou… 2 [Bot…  2 [Som…
+ 7 401 [Hsinch… 1 [Mal… 4 [50-… 3 [Sen… 2 [Tao… 4 [WOR… 4 [Lab… 1 [Tai…  6 [Som…
+ 8 502 [Miaoli… 1 [Mal… 4 [50-… 3 [Sen… 2 [Tao… 1 [Hig… 1 [Civ… 2 [Bot…  4 [Som…
+ 9 502 [Miaoli… 2 [Fem… 4 [50-… 3 [Sen… 2 [Tao… 4 [WOR… 4 [Lab… 2 [Bot…  1 [Str…
+10 502 [Miaoli… 1 [Mal… 2 [30-… 3 [Sen… 2 [Tao… 1 [Hig… 2 [Man… 2 [Bot…  3 [Lea…
+# … with 439 more rows, and 45 more variables: PartyID &lt;dbl+lbl&gt;, Tondu &lt;fct&gt;,
+#   Tondu3 &lt;dbl+lbl&gt;, nI2 &lt;dbl+lbl&gt;, votetsai &lt;dbl&gt;, green &lt;dbl&gt;,
+#   votetsai_nm &lt;dbl&gt;, votetsai_all &lt;dbl&gt;, Independence &lt;dbl&gt;,
+#   Unification &lt;dbl&gt;, sq &lt;dbl&gt;, Taiwanese &lt;dbl&gt;, edu &lt;dbl&gt;, female &lt;dbl&gt;,
+#   whitecollar &lt;dbl&gt;, lowincome &lt;dbl&gt;, income &lt;dbl&gt;, income_nm &lt;dbl&gt;,
+#   age &lt;dbl&gt;, KMT &lt;dbl&gt;, DPP &lt;dbl&gt;, npp &lt;dbl&gt;, noparty &lt;dbl&gt;, pfp &lt;dbl&gt;,
+#   South &lt;dbl&gt;, north &lt;dbl&gt;, Minnan_father &lt;dbl&gt;, Mainland_father &lt;dbl&gt;, …
+
+[[4]]
+# A tibble: 186 × 54
+   District     Sex     Age     Edu     Arear   Career  Career8 Ethnic  Party   
+   &lt;dbl+lbl&gt;    &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+lb&gt;
+ 1 201 [Yi Lan… 2 [Fem… 4 [50-… 4 [Col… 1 [Tai… 1 [Hig… 1 [Civ… 1 [Tai… 25 [Neu…
+ 2 201 [Yi Lan… 1 [Mal… 5 [Abo… 4 [Col… 1 [Tai… 2 [Low… 1 [Civ… 2 [Bot… 25 [Neu…
+ 3 401 [Hsinch… 2 [Fem… 2 [30-… 4 [Col… 2 [Tao… 1 [Hig… 2 [Man… 1 [Tai…  2 [Som…
+ 4 401 [Hsinch… 1 [Mal… 3 [40-… 4 [Col… 2 [Tao… 1 [Hig… 2 [Man… 1 [Tai… 25 [Neu…
+ 5 502 [Miaoli… 2 [Fem… 4 [50-… 4 [Col… 2 [Tao… 4 [WOR… 1 [Civ… 2 [Bot… 25 [Neu…
+ 6 704 [Changh… 2 [Fem… 3 [40-… 4 [Col… 3 [Tai… 2 [Low… 3 [CLE… 2 [Bot…  3 [Lea…
+ 7 704 [Changh… 1 [Mal… 4 [50-… 4 [Col… 3 [Tai… 1 [Hig… 2 [Man… 1 [Tai…  8 [Som…
+ 8 704 [Changh… 2 [Fem… 3 [40-… 4 [Col… 3 [Tai… 2 [Low… 1 [Civ… 2 [Bot…  3 [Lea…
+ 9 704 [Changh… 2 [Fem… 2 [30-… 4 [Col… 3 [Tai… 1 [Hig… 7 [Hou… 1 [Tai…  5 [Str…
+10 901 [Yunlin… 1 [Mal… 4 [50-… 4 [Col… 4 [Yun… 1 [Hig… 2 [Man… 1 [Tai… 25 [Neu…
+# … with 176 more rows, and 45 more variables: PartyID &lt;dbl+lbl&gt;, Tondu &lt;fct&gt;,
+#   Tondu3 &lt;dbl+lbl&gt;, nI2 &lt;dbl+lbl&gt;, votetsai &lt;dbl&gt;, green &lt;dbl&gt;,
+#   votetsai_nm &lt;dbl&gt;, votetsai_all &lt;dbl&gt;, Independence &lt;dbl&gt;,
+#   Unification &lt;dbl&gt;, sq &lt;dbl&gt;, Taiwanese &lt;dbl&gt;, edu &lt;dbl&gt;, female &lt;dbl&gt;,
+#   whitecollar &lt;dbl&gt;, lowincome &lt;dbl&gt;, income &lt;dbl&gt;, income_nm &lt;dbl&gt;,
+#   age &lt;dbl&gt;, KMT &lt;dbl&gt;, DPP &lt;dbl&gt;, npp &lt;dbl&gt;, noparty &lt;dbl&gt;, pfp &lt;dbl&gt;,
+#   South &lt;dbl&gt;, north &lt;dbl&gt;, Minnan_father &lt;dbl&gt;, Mainland_father &lt;dbl&gt;, …
+
+[[5]]
+# A tibble: 562 × 54
+   District     Sex     Age     Edu     Arear   Career  Career8 Ethnic  Party   
+   &lt;dbl+lbl&gt;    &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+lb&gt;
+ 1 201 [Yi Lan… 2 [Fem… 2 [30-… 5 [Abo… 1 [Tai… 2 [Low… 3 [CLE… 2 [Bot… 25 [Neu…
+ 2 201 [Yi Lan… 1 [Mal… 5 [Abo… 5 [Abo… 1 [Tai… 1 [Hig… 1 [Civ… 2 [Bot…  3 [Lea…
+ 3 201 [Yi Lan… 2 [Fem… 4 [50-… 5 [Abo… 1 [Tai… 1 [Hig… 2 [Man… 1 [Tai… 24 [Som…
+ 4 201 [Yi Lan… 2 [Fem… 3 [40-… 5 [Abo… 1 [Tai… 4 [WOR… 7 [Hou… 1 [Tai…  3 [Lea…
+ 5 201 [Yi Lan… 2 [Fem… 4 [50-… 5 [Abo… 1 [Tai… 1 [Hig… 2 [Man… 2 [Bot…  3 [Lea…
+ 6 201 [Yi Lan… 1 [Mal… 3 [40-… 5 [Abo… 1 [Tai… 4 [WOR… 4 [Lab… 1 [Tai… 23 [Lea…
+ 7 401 [Hsinch… 1 [Mal… 3 [40-… 5 [Abo… 2 [Tao… 1 [Hig… 2 [Man… 1 [Tai…  7 [Lea…
+ 8 401 [Hsinch… 1 [Mal… 1 [20-… 5 [Abo… 2 [Tao… 4 [WOR… 4 [Lab… 9 [Nor… 25 [Neu…
+ 9 401 [Hsinch… 2 [Fem… 1 [20-… 5 [Abo… 2 [Tao… 1 [Hig… 2 [Man… 1 [Tai… 25 [Neu…
+10 502 [Miaoli… 2 [Fem… 1 [20-… 5 [Abo… 2 [Tao… 1 [Hig… 6 [Stu… 1 [Tai…  2 [Som…
+# … with 552 more rows, and 45 more variables: PartyID &lt;dbl+lbl&gt;, Tondu &lt;fct&gt;,
+#   Tondu3 &lt;dbl+lbl&gt;, nI2 &lt;dbl+lbl&gt;, votetsai &lt;dbl&gt;, green &lt;dbl&gt;,
+#   votetsai_nm &lt;dbl&gt;, votetsai_all &lt;dbl&gt;, Independence &lt;dbl&gt;,
+#   Unification &lt;dbl&gt;, sq &lt;dbl&gt;, Taiwanese &lt;dbl&gt;, edu &lt;dbl&gt;, female &lt;dbl&gt;,
+#   whitecollar &lt;dbl&gt;, lowincome &lt;dbl&gt;, income &lt;dbl&gt;, income_nm &lt;dbl&gt;,
+#   age &lt;dbl&gt;, KMT &lt;dbl&gt;, DPP &lt;dbl&gt;, npp &lt;dbl&gt;, noparty &lt;dbl&gt;, pfp &lt;dbl&gt;,
+#   South &lt;dbl&gt;, north &lt;dbl&gt;, Minnan_father &lt;dbl&gt;, Mainland_father &lt;dbl&gt;, …
+
+[[6]]
+# A tibble: 10 × 54
+   District     Sex     Age     Edu     Arear   Career  Career8 Ethnic  Party   
+   &lt;dbl+lbl&gt;    &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+lb&gt;
+ 1 1401 [Taitu… 1 [Mal… 5 [Abo… 9 [Non… 6 [Hua… 5 [Oth… 8 [Oth… 9 [Nor… 25 [Neu…
+ 2 6806 [Taoyu… 1 [Mal… 1 [20-… 9 [Non… 2 [Tao… 1 [Hig… 6 [Stu… 1 [Tai…  6 [Som…
+ 3  201 [Yi La… 2 [Fem… 5 [Abo… 9 [Non… 1 [Tai… 4 [WOR… 4 [Lab… 1 [Tai…  6 [Som…
+ 4 6408 [Kaohs… 1 [Mal… 4 [50-… 9 [Non… 5 [Kao… 5 [Oth… 8 [Oth… 1 [Tai…  5 [Str…
+ 5 6604 [Taich… 1 [Mal… 4 [50-… 9 [Non… 3 [Tai… 5 [Oth… 8 [Oth… 1 [Tai… 25 [Neu…
+ 6 6406 [Kaohs… 1 [Mal… 5 [Abo… 9 [Non… 5 [Kao… 4 [WOR… 4 [Lab… 2 [Bot… 25 [Neu…
+ 7 1701 [Keelu… 2 [Fem… 4 [50-… 9 [Non… 1 [Tai… 5 [Oth… 7 [Hou… 2 [Bot… 25 [Neu…
+ 8 6509 [New T… 2 [Fem… 2 [30-… 9 [Non… 1 [Tai… 1 [Hig… 7 [Hou… 2 [Bot… 10 [Som…
+ 9 1701 [Keelu… 1 [Mal… 5 [Abo… 9 [Non… 1 [Tai… 5 [Oth… 8 [Oth… 9 [Nor…  6 [Som…
+10 1701 [Keelu… 2 [Fem… 2 [30-… 9 [Non… 1 [Tai… 5 [Oth… 8 [Oth… 1 [Tai…  6 [Som…
+# … with 45 more variables: PartyID &lt;dbl+lbl&gt;, Tondu &lt;fct&gt;, Tondu3 &lt;dbl+lbl&gt;,
+#   nI2 &lt;dbl+lbl&gt;, votetsai &lt;dbl&gt;, green &lt;dbl&gt;, votetsai_nm &lt;dbl&gt;,
+#   votetsai_all &lt;dbl&gt;, Independence &lt;dbl&gt;, Unification &lt;dbl&gt;, sq &lt;dbl&gt;,
+#   Taiwanese &lt;dbl&gt;, edu &lt;dbl&gt;, female &lt;dbl&gt;, whitecollar &lt;dbl&gt;,
+#   lowincome &lt;dbl&gt;, income &lt;dbl&gt;, income_nm &lt;dbl&gt;, age &lt;dbl&gt;, KMT &lt;dbl&gt;,
+#   DPP &lt;dbl&gt;, npp &lt;dbl&gt;, noparty &lt;dbl&gt;, pfp &lt;dbl&gt;, South &lt;dbl&gt;, north &lt;dbl&gt;,
+#   Minnan_father &lt;dbl&gt;, Mainland_father &lt;dbl&gt;, Econ_worse &lt;dbl&gt;, …</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(edu_groups, <span class="fu">aes</span>(Tondu)) <span class="sc">+</span> </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="fu">interaction</span>(edu, Tondu)), <span class="at">position=</span><span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Frequency"</span>) <span class="sc">+</span> </span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Sentiment towards Taiwanese Independence"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assignment2_files/figure-html/unnamed-chunk-1-7.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>tw_groups <span class="ot">&lt;-</span>TEDS_2016 <span class="sc">%&gt;%</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Taiwanese)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_split</span>(tw_groups)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;list_of&lt;
+  tbl_df&lt;
+    District       : labelled&lt;double&gt;
+    Sex            : labelled&lt;double&gt;
+    Age            : labelled&lt;double&gt;
+    Edu            : labelled&lt;double&gt;
+    Arear          : labelled&lt;double&gt;
+    Career         : labelled&lt;double&gt;
+    Career8        : labelled&lt;double&gt;
+    Ethnic         : labelled&lt;double&gt;
+    Party          : labelled&lt;double&gt;
+    PartyID        : labelled&lt;double&gt;
+    Tondu          : factor&lt;56c7a&gt;
+    Tondu3         : labelled&lt;double&gt;
+    nI2            : labelled&lt;double&gt;
+    votetsai       : double
+    green          : double
+    votetsai_nm    : double
+    votetsai_all   : double
+    Independence   : double
+    Unification    : double
+    sq             : double
+    Taiwanese      : double
+    edu            : double
+    female         : double
+    whitecollar    : double
+    lowincome      : double
+    income         : double
+    income_nm      : double
+    age            : double
+    KMT            : double
+    DPP            : double
+    npp            : double
+    noparty        : double
+    pfp            : double
+    South          : double
+    north          : double
+    Minnan_father  : double
+    Mainland_father: double
+    Econ_worse     : double
+    Inequality     : double
+    inequality5    : double
+    econworse5     : double
+    Govt_for_public: double
+    pubwelf5       : double
+    Govt_dont_care : double
+    highincome     : double
+    votekmt        : double
+    votekmt_nm     : double
+    Blue           : double
+    Green          : double
+    No_Party       : double
+    voteblue       : double
+    voteblue_nm    : double
+    votedpp_1      : double
+    votekmt_1      : double
+  &gt;
+&gt;[2]&gt;
+[[1]]
+# A tibble: 630 × 54
+   District     Sex     Age     Edu     Arear   Career  Career8 Ethnic  Party   
+   &lt;dbl+lbl&gt;    &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+lb&gt;
+ 1 201 [Yi Lan… 2 [Fem… 2 [30-… 5 [Abo… 1 [Tai… 2 [Low… 3 [CLE… 2 [Bot… 25 [Neu…
+ 2 201 [Yi Lan… 1 [Mal… 5 [Abo… 5 [Abo… 1 [Tai… 1 [Hig… 1 [Civ… 2 [Bot…  3 [Lea…
+ 3 201 [Yi Lan… 2 [Fem… 5 [Abo… 1 [Bel… 1 [Tai… 3 [FAR… 5 [FAR… 9 [Nor… 25 [Neu…
+ 4 201 [Yi Lan… 1 [Mal… 5 [Abo… 1 [Bel… 1 [Tai… 4 [WOR… 4 [Lab… 2 [Bot… 25 [Neu…
+ 5 201 [Yi Lan… 1 [Mal… 4 [50-… 1 [Bel… 1 [Tai… 3 [FAR… 5 [FAR… 2 [Bot… 25 [Neu…
+ 6 201 [Yi Lan… 2 [Fem… 5 [Abo… 1 [Bel… 1 [Tai… 5 [Oth… 7 [Hou… 2 [Bot… 25 [Neu…
+ 7 201 [Yi Lan… 2 [Fem… 4 [50-… 5 [Abo… 1 [Tai… 1 [Hig… 2 [Man… 2 [Bot…  3 [Lea…
+ 8 201 [Yi Lan… 2 [Fem… 5 [Abo… 1 [Bel… 1 [Tai… 5 [Oth… 7 [Hou… 9 [Nor… 25 [Neu…
+ 9 201 [Yi Lan… 2 [Fem… 4 [50-… 3 [Sen… 1 [Tai… 2 [Low… 3 [CLE… 2 [Bot… 25 [Neu…
+10 201 [Yi Lan… 1 [Mal… 5 [Abo… 4 [Col… 1 [Tai… 2 [Low… 1 [Civ… 2 [Bot… 25 [Neu…
+# … with 620 more rows, and 45 more variables: PartyID &lt;dbl+lbl&gt;, Tondu &lt;fct&gt;,
+#   Tondu3 &lt;dbl+lbl&gt;, nI2 &lt;dbl+lbl&gt;, votetsai &lt;dbl&gt;, green &lt;dbl&gt;,
+#   votetsai_nm &lt;dbl&gt;, votetsai_all &lt;dbl&gt;, Independence &lt;dbl&gt;,
+#   Unification &lt;dbl&gt;, sq &lt;dbl&gt;, Taiwanese &lt;dbl&gt;, edu &lt;dbl&gt;, female &lt;dbl&gt;,
+#   whitecollar &lt;dbl&gt;, lowincome &lt;dbl&gt;, income &lt;dbl&gt;, income_nm &lt;dbl&gt;,
+#   age &lt;dbl&gt;, KMT &lt;dbl&gt;, DPP &lt;dbl&gt;, npp &lt;dbl&gt;, noparty &lt;dbl&gt;, pfp &lt;dbl&gt;,
+#   South &lt;dbl&gt;, north &lt;dbl&gt;, Minnan_father &lt;dbl&gt;, Mainland_father &lt;dbl&gt;, …
+
+[[2]]
+# A tibble: 1,060 × 54
+   District     Sex     Age     Edu     Arear   Career  Career8 Ethnic  Party   
+   &lt;dbl+lbl&gt;    &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+lb&gt;
+ 1 201 [Yi Lan… 2 [Fem… 4 [50-… 4 [Col… 1 [Tai… 1 [Hig… 1 [Civ… 1 [Tai… 25 [Neu…
+ 2 201 [Yi Lan… 1 [Mal… 4 [50-… 2 [Jun… 1 [Tai… 4 [WOR… 4 [Lab… 1 [Tai… 25 [Neu…
+ 3 201 [Yi Lan… 2 [Fem… 5 [Abo… 2 [Jun… 1 [Tai… 2 [Low… 7 [Hou… 1 [Tai…  6 [Som…
+ 4 201 [Yi Lan… 2 [Fem… 4 [50-… 5 [Abo… 1 [Tai… 1 [Hig… 2 [Man… 1 [Tai… 24 [Som…
+ 5 201 [Yi Lan… 2 [Fem… 5 [Abo… 1 [Bel… 1 [Tai… 4 [WOR… 4 [Lab… 1 [Tai… 25 [Neu…
+ 6 201 [Yi Lan… 1 [Mal… 5 [Abo… 1 [Bel… 1 [Tai… 3 [FAR… 5 [FAR… 1 [Tai…  6 [Som…
+ 7 201 [Yi Lan… 2 [Fem… 1 [20-… 2 [Jun… 1 [Tai… 5 [Oth… 7 [Hou… 1 [Tai…  5 [Str…
+ 8 201 [Yi Lan… 2 [Fem… 3 [40-… 5 [Abo… 1 [Tai… 4 [WOR… 7 [Hou… 1 [Tai…  3 [Lea…
+ 9 201 [Yi Lan… 1 [Mal… 3 [40-… 5 [Abo… 1 [Tai… 4 [WOR… 4 [Lab… 1 [Tai… 23 [Lea…
+10 401 [Hsinch… 1 [Mal… 3 [40-… 5 [Abo… 2 [Tao… 1 [Hig… 2 [Man… 1 [Tai…  7 [Lea…
+# … with 1,050 more rows, and 45 more variables: PartyID &lt;dbl+lbl&gt;,
+#   Tondu &lt;fct&gt;, Tondu3 &lt;dbl+lbl&gt;, nI2 &lt;dbl+lbl&gt;, votetsai &lt;dbl&gt;, green &lt;dbl&gt;,
+#   votetsai_nm &lt;dbl&gt;, votetsai_all &lt;dbl&gt;, Independence &lt;dbl&gt;,
+#   Unification &lt;dbl&gt;, sq &lt;dbl&gt;, Taiwanese &lt;dbl&gt;, edu &lt;dbl&gt;, female &lt;dbl&gt;,
+#   whitecollar &lt;dbl&gt;, lowincome &lt;dbl&gt;, income &lt;dbl&gt;, income_nm &lt;dbl&gt;,
+#   age &lt;dbl&gt;, KMT &lt;dbl&gt;, DPP &lt;dbl&gt;, npp &lt;dbl&gt;, noparty &lt;dbl&gt;, pfp &lt;dbl&gt;,
+#   South &lt;dbl&gt;, north &lt;dbl&gt;, Minnan_father &lt;dbl&gt;, Mainland_father &lt;dbl&gt;, …</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(tw_groups, <span class="fu">aes</span>(Tondu)) <span class="sc">+</span> </span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="fu">interaction</span>(Taiwanese, Tondu)), <span class="at">position=</span><span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Frequency"</span>) <span class="sc">+</span> </span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Sentiment towards Taiwanese Independence"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assignment2_files/figure-html/unnamed-chunk-1-8.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>ew_groups <span class="ot">&lt;-</span>TEDS_2016 <span class="sc">%&gt;%</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Econ_worse)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_split</span>(ew_groups)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;list_of&lt;
+  tbl_df&lt;
+    District       : labelled&lt;double&gt;
+    Sex            : labelled&lt;double&gt;
+    Age            : labelled&lt;double&gt;
+    Edu            : labelled&lt;double&gt;
+    Arear          : labelled&lt;double&gt;
+    Career         : labelled&lt;double&gt;
+    Career8        : labelled&lt;double&gt;
+    Ethnic         : labelled&lt;double&gt;
+    Party          : labelled&lt;double&gt;
+    PartyID        : labelled&lt;double&gt;
+    Tondu          : factor&lt;56c7a&gt;
+    Tondu3         : labelled&lt;double&gt;
+    nI2            : labelled&lt;double&gt;
+    votetsai       : double
+    green          : double
+    votetsai_nm    : double
+    votetsai_all   : double
+    Independence   : double
+    Unification    : double
+    sq             : double
+    Taiwanese      : double
+    edu            : double
+    female         : double
+    whitecollar    : double
+    lowincome      : double
+    income         : double
+    income_nm      : double
+    age            : double
+    KMT            : double
+    DPP            : double
+    npp            : double
+    noparty        : double
+    pfp            : double
+    South          : double
+    north          : double
+    Minnan_father  : double
+    Mainland_father: double
+    Econ_worse     : double
+    Inequality     : double
+    inequality5    : double
+    econworse5     : double
+    Govt_for_public: double
+    pubwelf5       : double
+    Govt_dont_care : double
+    highincome     : double
+    votekmt        : double
+    votekmt_nm     : double
+    Blue           : double
+    Green          : double
+    No_Party       : double
+    voteblue       : double
+    voteblue_nm    : double
+    votedpp_1      : double
+    votekmt_1      : double
+  &gt;
+&gt;[2]&gt;
+[[1]]
+# A tibble: 753 × 54
+   District     Sex     Age     Edu     Arear   Career  Career8 Ethnic  Party   
+   &lt;dbl+lbl&gt;    &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+lb&gt;
+ 1 201 [Yi Lan… 2 [Fem… 4 [50-… 4 [Col… 1 [Tai… 1 [Hig… 1 [Civ… 1 [Tai… 25 [Neu…
+ 2 201 [Yi Lan… 2 [Fem… 2 [30-… 5 [Abo… 1 [Tai… 2 [Low… 3 [CLE… 2 [Bot… 25 [Neu…
+ 3 201 [Yi Lan… 2 [Fem… 5 [Abo… 1 [Bel… 1 [Tai… 3 [FAR… 5 [FAR… 9 [Nor… 25 [Neu…
+ 4 201 [Yi Lan… 2 [Fem… 1 [20-… 2 [Jun… 1 [Tai… 5 [Oth… 7 [Hou… 1 [Tai…  5 [Str…
+ 5 201 [Yi Lan… 2 [Fem… 5 [Abo… 1 [Bel… 1 [Tai… 5 [Oth… 7 [Hou… 2 [Bot… 25 [Neu…
+ 6 201 [Yi Lan… 2 [Fem… 3 [40-… 5 [Abo… 1 [Tai… 4 [WOR… 7 [Hou… 1 [Tai…  3 [Lea…
+ 7 201 [Yi Lan… 2 [Fem… 5 [Abo… 1 [Bel… 1 [Tai… 5 [Oth… 7 [Hou… 9 [Nor… 25 [Neu…
+ 8 201 [Yi Lan… 1 [Mal… 5 [Abo… 4 [Col… 1 [Tai… 2 [Low… 1 [Civ… 2 [Bot… 25 [Neu…
+ 9 401 [Hsinch… 2 [Fem… 2 [30-… 4 [Col… 2 [Tao… 1 [Hig… 2 [Man… 1 [Tai…  2 [Som…
+10 401 [Hsinch… 2 [Fem… 2 [30-… 3 [Sen… 2 [Tao… 5 [Oth… 8 [Oth… 1 [Tai…  3 [Lea…
+# … with 743 more rows, and 45 more variables: PartyID &lt;dbl+lbl&gt;, Tondu &lt;fct&gt;,
+#   Tondu3 &lt;dbl+lbl&gt;, nI2 &lt;dbl+lbl&gt;, votetsai &lt;dbl&gt;, green &lt;dbl&gt;,
+#   votetsai_nm &lt;dbl&gt;, votetsai_all &lt;dbl&gt;, Independence &lt;dbl&gt;,
+#   Unification &lt;dbl&gt;, sq &lt;dbl&gt;, Taiwanese &lt;dbl&gt;, edu &lt;dbl&gt;, female &lt;dbl&gt;,
+#   whitecollar &lt;dbl&gt;, lowincome &lt;dbl&gt;, income &lt;dbl&gt;, income_nm &lt;dbl&gt;,
+#   age &lt;dbl&gt;, KMT &lt;dbl&gt;, DPP &lt;dbl&gt;, npp &lt;dbl&gt;, noparty &lt;dbl&gt;, pfp &lt;dbl&gt;,
+#   South &lt;dbl&gt;, north &lt;dbl&gt;, Minnan_father &lt;dbl&gt;, Mainland_father &lt;dbl&gt;, …
+
+[[2]]
+# A tibble: 937 × 54
+   District     Sex     Age     Edu     Arear   Career  Career8 Ethnic  Party   
+   &lt;dbl+lbl&gt;    &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+lb&gt;
+ 1 201 [Yi Lan… 1 [Mal… 5 [Abo… 5 [Abo… 1 [Tai… 1 [Hig… 1 [Civ… 2 [Bot…  3 [Lea…
+ 2 201 [Yi Lan… 1 [Mal… 4 [50-… 2 [Jun… 1 [Tai… 4 [WOR… 4 [Lab… 1 [Tai… 25 [Neu…
+ 3 201 [Yi Lan… 2 [Fem… 5 [Abo… 2 [Jun… 1 [Tai… 2 [Low… 7 [Hou… 1 [Tai…  6 [Som…
+ 4 201 [Yi Lan… 1 [Mal… 5 [Abo… 1 [Bel… 1 [Tai… 4 [WOR… 4 [Lab… 2 [Bot… 25 [Neu…
+ 5 201 [Yi Lan… 2 [Fem… 4 [50-… 5 [Abo… 1 [Tai… 1 [Hig… 2 [Man… 1 [Tai… 24 [Som…
+ 6 201 [Yi Lan… 2 [Fem… 5 [Abo… 1 [Bel… 1 [Tai… 4 [WOR… 4 [Lab… 1 [Tai… 25 [Neu…
+ 7 201 [Yi Lan… 1 [Mal… 4 [50-… 1 [Bel… 1 [Tai… 3 [FAR… 5 [FAR… 2 [Bot… 25 [Neu…
+ 8 201 [Yi Lan… 1 [Mal… 5 [Abo… 1 [Bel… 1 [Tai… 3 [FAR… 5 [FAR… 1 [Tai…  6 [Som…
+ 9 201 [Yi Lan… 2 [Fem… 4 [50-… 5 [Abo… 1 [Tai… 1 [Hig… 2 [Man… 2 [Bot…  3 [Lea…
+10 201 [Yi Lan… 2 [Fem… 4 [50-… 3 [Sen… 1 [Tai… 2 [Low… 3 [CLE… 2 [Bot… 25 [Neu…
+# … with 927 more rows, and 45 more variables: PartyID &lt;dbl+lbl&gt;, Tondu &lt;fct&gt;,
+#   Tondu3 &lt;dbl+lbl&gt;, nI2 &lt;dbl+lbl&gt;, votetsai &lt;dbl&gt;, green &lt;dbl&gt;,
+#   votetsai_nm &lt;dbl&gt;, votetsai_all &lt;dbl&gt;, Independence &lt;dbl&gt;,
+#   Unification &lt;dbl&gt;, sq &lt;dbl&gt;, Taiwanese &lt;dbl&gt;, edu &lt;dbl&gt;, female &lt;dbl&gt;,
+#   whitecollar &lt;dbl&gt;, lowincome &lt;dbl&gt;, income &lt;dbl&gt;, income_nm &lt;dbl&gt;,
+#   age &lt;dbl&gt;, KMT &lt;dbl&gt;, DPP &lt;dbl&gt;, npp &lt;dbl&gt;, noparty &lt;dbl&gt;, pfp &lt;dbl&gt;,
+#   South &lt;dbl&gt;, north &lt;dbl&gt;, Minnan_father &lt;dbl&gt;, Mainland_father &lt;dbl&gt;, …</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(ew_groups, <span class="fu">aes</span>(Tondu)) <span class="sc">+</span> </span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="fu">interaction</span>(Econ_worse, Tondu)), <span class="at">position=</span><span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Frequency"</span>) <span class="sc">+</span> </span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Sentiment towards Taiwanese Independence"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assignment2_files/figure-html/unnamed-chunk-1-9.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>For the votetsai variable, it would be very similar. I would find the frequency of individuals who voted for President Tsai and did not vote for President Tsai. Then, I would group the data based on each variable and plot them similarly as the example above.</p>
+<p>In addition, here is a frequency table and bar chart of the Tondu variable.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(descr)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">freq</span>(TEDS_2016<span class="sc">$</span>Tondu)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assignment2_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>TEDS_2016$Tondu 
+                             Frequency Percent
+Unification now                     27   1.598
+Status quo, unif. in future        180  10.651
+Status quo, decide later           546  32.308
+Status quo forever                 328  19.408
+Status quo, indep. in future       380  22.485
+Independence now                   108   6.391
+No response                        121   7.160
+Total                             1690 100.000</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(TEDS_2016, <span class="fu">aes</span>(Tondu)) <span class="sc">+</span> </span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">y =</span> (..count..)<span class="sc">/</span><span class="fu">sum</span>(..count..))) <span class="sc">+</span> </span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels=</span>scales<span class="sc">::</span>percent) <span class="sc">+</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Frequency"</span>) <span class="sc">+</span> </span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Sentiment towards Taiwanese Independence"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: The dot-dot notation (`..count..`) was deprecated in ggplot2 3.4.0.
+ℹ Please use `after_stat(count)` instead.</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="assignment2_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../Assignments/assignment1.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Assignment 1</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../Assignments/assignment3.html" class="pagination-link">
+        <span class="nav-page-text">Assignment 3</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© Copyright 2023, Wei-chen Huang</div>   
+  </div>
+</footer>
+
+
+
+</body></html>
